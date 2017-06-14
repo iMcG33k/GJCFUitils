@@ -6,10 +6,10 @@
 //  Copyright (c) 2014年 ZYProSoft. All rights reserved.
 //
 
-#import "GJCFDateUitil.h"
-#import "GJCFUitils.h"
+#import "SWDateUitil.h"
+#import "SWUitils.h"
 
-@implementation GJCFDateUitil
+@implementation SWDateUitil
 
 + (NSCalendar *)sharedCalendar
 {
@@ -24,7 +24,7 @@
     static NSDateFormatter *_gjcfDateFormatter = nil;
     static dispatch_once_t onceToken;
     
-    GJCFDispatchOnce(onceToken, ^{
+    SWDispatchOnce(onceToken, ^{
         
         if (!_gjcfDateFormatter) {
             _gjcfDateFormatter = [[NSDateFormatter alloc]init];
@@ -35,11 +35,11 @@
 
 + (NSString *)detailTimeAgoString:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return nil;
     }
     long long timeNow = [date timeIntervalSince1970];
-    NSCalendar * calendar=[GJCFDateUitil sharedCalendar];
+    NSCalendar * calendar=[SWDateUitil sharedCalendar];
     NSInteger unitFlags = NSMonthCalendarUnit | NSDayCalendarUnit|NSYearCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit;
     NSDateComponents * component=[calendar components:unitFlags fromDate:date];
     
@@ -75,12 +75,12 @@
 
 + (NSString *)detailTimeAgoStringByInterval:(long long)timeInterval
 {
-    return [GJCFDateUitil detailTimeAgoString:GJCFDateFromTimeInterval(timeInterval)];
+    return [SWDateUitil detailTimeAgoString:SWDateFromTimeInterval(timeInterval)];
 }
 
 + (NSUInteger)daysAgoFromNow:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return NSIntegerMax;
     }
     NSCalendar *calendar = [[self class] sharedCalendar];
@@ -93,7 +93,7 @@
 
 + (NSUInteger)daysAgoAgainstMidnight:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return NSIntegerMax;
     }
     NSDateFormatter *mdf = [[self class] sharedDateFormatter];
@@ -104,10 +104,10 @@
 
 + (NSString *)stringDaysAgoAgainstMidnight:(BOOL)flag withDate:(NSDate *)date {
     
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return nil;
     }
-    NSUInteger daysAgo = (flag) ? [GJCFDateUitil daysAgoAgainstMidnight:date] : [GJCFDateUitil daysAgoFromNow:date];
+    NSUInteger daysAgo = (flag) ? [SWDateUitil daysAgoAgainstMidnight:date] : [SWDateUitil daysAgoFromNow:date];
     NSString *text = nil;
     switch (daysAgo) {
         case 0:
@@ -124,10 +124,10 @@
 
 + (NSString *)stringDaysAgo:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return nil;
     }
-    return [GJCFDateUitil stringDaysAgoAgainstMidnight:YES withDate:date];
+    return [SWDateUitil stringDaysAgoAgainstMidnight:YES withDate:date];
 }
 
 /*
@@ -136,7 +136,7 @@
  */
 + (NSUInteger)weekDay:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return NSIntegerMax;
     }
     NSDateComponents *weekdayComponents = [[[self class] sharedCalendar] components:(NSWeekdayCalendarUnit) fromDate:date];
@@ -153,7 +153,7 @@
 
 + (NSString *)weekDayString:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return nil;
     }
     NSDictionary *weekNameDict = @{
@@ -165,21 +165,21 @@
                                    @(6):@"六",
                                    @(7):@"日",
                                    };
-    NSString *weekName = [weekNameDict objectForKey:@(GJCFDateGetWeekDay(date))];
+    NSString *weekName = [weekNameDict objectForKey:@(SWDateGetWeekDay(date))];
     return [NSString stringWithFormat:@"星期%@",weekName];
 }
 
 + (NSString *)weekNumberString:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return nil;
     }
-    return [NSString stringWithFormat:@"第%lu周",GJCFDateGetWeekNum(date)];
+    return [NSString stringWithFormat:@"第%lu周",SWDateGetWeekNum(date)];
 }
 
 + (NSUInteger)weekNumber:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return NSIntegerMax;
     }
     NSCalendar *calendar = [[self class] sharedCalendar];
@@ -187,9 +187,20 @@
     return [dateComponents week];
 }
 
++ (NSInteger)weekNumberMondayFirst:(NSDate *)date
+{
+    if (SWCheckObjectNull(date)) {
+        return NSIntegerMax;
+    }
+    NSCalendar *calendar = [[self class] sharedCalendar];
+    calendar.firstWeekday = 2;
+    NSDateComponents *dateComponents = [calendar components:(NSWeekOfYearCalendarUnit) fromDate:date];
+    return [dateComponents weekOfYear];
+}
+
 + (NSUInteger)hour:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return NSIntegerMax;
     }
     NSCalendar *calendar = [[self class] sharedCalendar];
@@ -199,7 +210,7 @@
 
 + (NSUInteger)minute:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return NSIntegerMax;
     }
     NSCalendar *calendar = [[self class] sharedCalendar];
@@ -209,7 +220,7 @@
 
 + (NSUInteger)year:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return NSIntegerMax;
     }
     NSCalendar *calendar = [[self class] sharedCalendar];
@@ -219,7 +230,7 @@
 
 + (NSUInteger)month:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return NSIntegerMax;
     }
     NSCalendar *calendar = [[self class] sharedCalendar];
@@ -229,7 +240,7 @@
 
 + (NSInteger)day:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return NSIntegerMax;
     }
     NSCalendar *calendar = [[self class] sharedCalendar];
@@ -244,23 +255,23 @@
 
 + (NSDate *)dateFromString:(NSString *)string
 {
-    if (GJCFStringIsNull(string)) {
+    if (SWStringIsNull(string)) {
         return nil;
     }
-    return [GJCFDateUitil dateFromString:string withFormat:kNSDateHelperFormatSQLDate];
+    return [SWDateUitil dateFromString:string withFormat:kNSDateHelperFormatSQLDate];
 }
 
 + (NSDate *)dateTimeFromString:(NSString *)string
 {
-    if (GJCFStringIsNull(string)) {
+    if (SWStringIsNull(string)) {
         return nil;
     }
-    return [GJCFDateUitil dateFromString:string withFormat:kNSDateHelperFormatSQLDateWithTime];
+    return [SWDateUitil dateFromString:string withFormat:kNSDateHelperFormatSQLDateWithTime];
 }
 
 + (NSDate *)dateFromString:(NSString *)string withFormat:(NSString *)format
 {
-    if (GJCFCheckKeyValueHasNull(string, format)) {
+    if (SWCheckKeyValueHasNull(string, format)) {
         return nil;
     }
     NSDateFormatter *formatter = [self sharedDateFormatter];
@@ -271,7 +282,7 @@
 
 + (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)string
 {
-    if (GJCFCheckKeyValueHasNull(string, date)) {
+    if (SWCheckKeyValueHasNull(string, date)) {
         return nil;
     }
     [[[self class] sharedDateFormatter] setDateFormat:string];
@@ -281,15 +292,15 @@
 
 + (NSString *)stringFromDate:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return nil;
     }
-    return [GJCFDateUitil stringFromDate:date withFormat:kNSDateHelperFormatSQLDateWithTime];
+    return [SWDateUitil stringFromDate:date withFormat:kNSDateHelperFormatSQLDateWithTime];
 }
 
 + (NSString *)stringWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle withDate:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return nil;
     }
     [[[self class] sharedDateFormatter] setDateStyle:dateStyle];
@@ -300,7 +311,7 @@
 
 + (NSDate *)beginningOfWeek:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return nil;
     }
     // largely borrowed from "Date and Time Programming Guide for Cocoa"
@@ -333,7 +344,7 @@
 
 + (NSDate *)beginningOfDay:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return nil;
     }
     NSCalendar *calendar = [[self class] sharedCalendar];
@@ -345,7 +356,7 @@
 
 + (NSDate *)endOfWeek:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return nil;
     }
     NSCalendar *calendar = [[self class] sharedCalendar];
@@ -381,7 +392,7 @@
 
 + (NSString *)birthdayToAge:(NSDate *)date
 {
-    if (GJCFCheckObjectNull(date)) {
+    if (SWCheckObjectNull(date)) {
         return nil;
     }
     NSCalendar *calendar = [[self class] sharedCalendar];
@@ -407,13 +418,13 @@
 
 + (NSString *)birthdayToAgeByTimeInterval:(NSTimeInterval)date
 {
-    return [GJCFDateUitil birthdayToAge:GJCFDateFromTimeInterval(date)];
+    return [SWDateUitil birthdayToAge:SWDateFromTimeInterval(date)];
 }
 
 + (NSString *)dateToConstellation:(NSDate *)date
 {
-    NSInteger day = [GJCFDateUitil day:date];
-    NSInteger month = [GJCFDateUitil month:date];
+    NSInteger day = [SWDateUitil day:date];
+    NSInteger month = [SWDateUitil month:date];
     
     if (day == NSNotFound || month == NSNotFound) {
         return nil;
@@ -439,7 +450,7 @@
 
 + (NSString *)dateToConstellationByTimeInterval:(NSTimeInterval)date
 {
-    return [GJCFDateUitil dateToConstellation:GJCFDateFromTimeInterval(date)];
+    return [SWDateUitil dateToConstellation:SWDateFromTimeInterval(date)];
 }
 
 

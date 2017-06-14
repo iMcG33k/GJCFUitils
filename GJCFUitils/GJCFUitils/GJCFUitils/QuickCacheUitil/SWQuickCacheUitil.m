@@ -6,12 +6,12 @@
 //  Copyright (c) 2014年 ZYProSoft. All rights reserved.
 //
 
-#import "GJCFQuickCacheUitil.h"
-#import "GJCFQuickCacheMacrocDefine.h"
-#import "GJCFDispatchMacrocDefine.h"
-#import "GJCFStringMacrocDefine.h"
+#import "SWQuickCacheUitil.h"
+#import "SWQuickCacheMacrocDefine.h"
+#import "SWDispatchMacrocDefine.h"
+#import "SWStringMacrocDefine.h"
 
-@implementation GJCFQuickCacheUitil
+@implementation SWQuickCacheUitil
 
 + (BOOL)isNullObject:(id)anObject
 {
@@ -24,7 +24,7 @@
 
 + (BOOL)checkValue:(id)value key:(id)key
 {
-    if(GJCFCheckObjectNull(value)||GJCFCheckObjectNull(key)){
+    if(SWCheckObjectNull(value)||SWCheckObjectNull(key)){
         return YES;
     }else{
         return NO;
@@ -38,31 +38,31 @@
 
 + (void)userDefaultCache:(id<NSCoding>)value key:(id)key
 {
-    if (GJCFCheckKeyValueHasNull(key, value)) {
+    if (SWCheckKeyValueHasNull(key, value)) {
         return;
     }
-    [[GJCFQuickCacheUitil standDefault]setObject:value forKey:key];
+    [[SWQuickCacheUitil standDefault]setObject:value forKey:key];
 }
 
 + (void)userDefaultRemove:(id)key
 {
-    if (GJCFCheckObjectNull(key)) {
+    if (SWCheckObjectNull(key)) {
         return;
     }
-    [[GJCFQuickCacheUitil standDefault]removeObjectForKey:key];
+    [[SWQuickCacheUitil standDefault]removeObjectForKey:key];
 }
 
 + (id)userDefaultGetValue:(id)key
 {
-    if (GJCFCheckObjectNull(key)) {
+    if (SWCheckObjectNull(key)) {
         return nil;
     }
-    return [[GJCFQuickCacheUitil standDefault]objectForKey:key];
+    return [[SWQuickCacheUitil standDefault]objectForKey:key];
 }
 
 + (BOOL)userDefaultEmptyValue:(id)key
 {
-    return [GJCFQuickCacheUitil userDefaultGetValue:key] == nil;
+    return [SWQuickCacheUitil userDefaultGetValue:key] == nil;
 }
 
 + (NSCache *)shareCache
@@ -70,7 +70,7 @@
     static NSCache *_gjcfNSCacheInstance = nil;
     static dispatch_once_t onceToken;
     
-    GJCFDispatchOnce(onceToken, ^{
+    SWDispatchOnce(onceToken, ^{
         
         if (!_gjcfNSCacheInstance) {
             _gjcfNSCacheInstance = [[NSCache alloc]init];
@@ -83,34 +83,34 @@
 
 + (void)systemMemoryCacheSet:(id<NSCoding>)value key:(id)key
 {
-    if (GJCFCheckKeyValueHasNull(value, key)) {
+    if (SWCheckKeyValueHasNull(value, key)) {
         return;
     }
-    [[GJCFQuickCacheUitil shareCache]setObject:value forKey:key];
+    [[SWQuickCacheUitil shareCache]setObject:value forKey:key];
 }
 
 + (void)systemMemoryCacheRemove:(id)key
 {
-    if (GJCFCheckObjectNull(key)) {
+    if (SWCheckObjectNull(key)) {
         return;
     }
-    [[GJCFQuickCacheUitil shareCache]removeObjectForKey:key];
+    [[SWQuickCacheUitil shareCache]removeObjectForKey:key];
 }
 
 + (id)systemMemoryCacheGetValue:(id)key
 {
-    if (GJCFCheckObjectNull(key)) {
+    if (SWCheckObjectNull(key)) {
         return nil;
     }
-    return [[GJCFQuickCacheUitil shareCache]objectForKey:key];
+    return [[SWQuickCacheUitil shareCache]objectForKey:key];
 }
 
 + (BOOL)systemMemoryCacheEmptyValue:(id)key
 {
-    if (GJCFCheckObjectNull(key)) {
+    if (SWCheckObjectNull(key)) {
         return NO;
     }
-    return [GJCFQuickCacheUitil systemMemoryCacheGetValue:key] == nil;
+    return [SWQuickCacheUitil systemMemoryCacheGetValue:key] == nil;
 }
 
 + (NSFileManager *)fileManager
@@ -120,36 +120,36 @@
 
 + (BOOL)fileExist:(NSString*)path
 {
-    if (GJCFStringIsNull(path)) {
+    if (SWStringIsNull(path)) {
         return NO;
     }
-    return [[GJCFQuickCacheUitil fileManager] fileExistsAtPath:path];
+    return [[SWQuickCacheUitil fileManager] fileExistsAtPath:path];
 }
 
 + (BOOL)directoryExist:(NSString*)dirPath
 {
-    if (GJCFStringIsNull(dirPath)) {
+    if (SWStringIsNull(dirPath)) {
         return NO;
     }
     BOOL isDir = YES;
     
-    return [[GJCFQuickCacheUitil fileManager]fileExistsAtPath:dirPath isDirectory:&isDir];
+    return [[SWQuickCacheUitil fileManager]fileExistsAtPath:dirPath isDirectory:&isDir];
 }
 
 + (BOOL)createDirectory:(NSString*)dirPath
 {
-    if (GJCFCheckObjectNull(dirPath)) {
+    if (SWCheckObjectNull(dirPath)) {
         return NO;
     }
-    if (GJCFFileDirectoryIsExist(dirPath)) {
+    if (SWFileDirectoryIsExist(dirPath)) {
         return YES;
     }
-    return [[GJCFQuickCacheUitil fileManager] createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:nil];
+    return [[SWQuickCacheUitil fileManager] createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:nil];
 }
 
 + (BOOL)writeFileData:(NSData*)data toPath:(NSString *)path
 {
-    if (GJCFCheckKeyValueHasNull(data, path)) {
+    if (SWCheckKeyValueHasNull(data, path)) {
         return NO;
     }
     
@@ -158,7 +158,7 @@
 
 + (NSData *)readFromFile:(NSString *)path
 {
-    if (GJCFCheckObjectNull(path)) {
+    if (SWCheckObjectNull(path)) {
         return nil;
     }
     
@@ -167,34 +167,34 @@
 
 + (BOOL)deleteFileAtPath:(NSString *)filePath
 {
-    if (GJCFStringIsNull(filePath)) {
+    if (SWStringIsNull(filePath)) {
         return NO;
     }
-    return [GJCFFileManager removeItemAtPath:filePath error:nil];
+    return [SWFileManager removeItemAtPath:filePath error:nil];
 }
 
 + (BOOL)deleteDirectoryAtPath:(NSString *)dirPath
 {
-    if (GJCFStringIsNull(dirPath)) {
+    if (SWStringIsNull(dirPath)) {
         return NO;
     }
-    return [GJCFFileManager removeItemAtPath:dirPath error:nil];
+    return [SWFileManager removeItemAtPath:dirPath error:nil];
 }
 
 + (BOOL)copyFileFromPath:(NSString *)fromPath toPath:(NSString *)toPath isRemoveOld:(BOOL)isRemove
 {
-    if (GJCFStringIsNull(fromPath) || GJCFStringIsNull(toPath) ) {
+    if (SWStringIsNull(fromPath) || SWStringIsNull(toPath) ) {
         return NO;
     }
-    if (!GJCFFileIsExist(fromPath)) {
+    if (!SWFileIsExist(fromPath)) {
         return NO;
     }
     
-    BOOL copyResult = [GJCFFileManager copyItemAtPath:fromPath toPath:toPath error:nil];
+    BOOL copyResult = [SWFileManager copyItemAtPath:fromPath toPath:toPath error:nil];
     if (copyResult) {
         
         if (isRemove) {
-            return [GJCFFileManager removeItemAtPath:fromPath error:nil];
+            return [SWFileManager removeItemAtPath:fromPath error:nil];
         }
         return YES;
         
@@ -205,13 +205,13 @@
 
 + (BOOL)archieveObject:(id<NSCoding>)anObject toFilePath:(NSString *)toPath
 {
-    if (GJCFCheckObjectNull(anObject) || GJCFStringIsNull(toPath)) {
+    if (SWCheckObjectNull(anObject) || SWStringIsNull(toPath)) {
         return NO;
     }
     NSData *archieveData = [NSKeyedArchiver archivedDataWithRootObject:anObject];
     if (archieveData) {
         
-        return GJCFFileWrite(archieveData, toPath);
+        return SWFileWrite(archieveData, toPath);
         
     }else{
         return NO;
@@ -220,7 +220,7 @@
 
 + (id)unarchieveFromPath:(NSString *)filePath
 {
-    if (GJCFStringIsNull(filePath)) {
+    if (SWStringIsNull(filePath)) {
         return nil;
     }
     return [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
@@ -233,10 +233,10 @@
 
 + (NSString *)documentDirectoryPath:(NSString *)file
 {
-    if (GJCFStringIsNull(file)) {
+    if (SWStringIsNull(file)) {
         return nil;
     }
-    return [[GJCFQuickCacheUitil documentDirectory]stringByAppendingPathComponent:file];
+    return [[SWQuickCacheUitil documentDirectory]stringByAppendingPathComponent:file];
 }
 
 + (NSString *)cacheDirectory
@@ -246,45 +246,45 @@
 
 + (NSString *)cacheDirectoryPath:(NSString *)file
 {
-    if (GJCFStringIsNull(file)) {
+    if (SWStringIsNull(file)) {
         return nil;
     }
-    return [[GJCFQuickCacheUitil cacheDirectory]stringByAppendingPathComponent:file];
+    return [[SWQuickCacheUitil cacheDirectory]stringByAppendingPathComponent:file];
 }
 
 + (BOOL)cacheDirectorySave:(id<NSCoding>)anObject withFileName:(NSString *)file
 {
-    if (GJCFCheckObjectNull(anObject) || GJCFStringIsNull(file)) {
+    if (SWCheckObjectNull(anObject) || SWStringIsNull(file)) {
         return NO;
     }
     
-    return GJCFArchieveObject(anObject, [GJCFQuickCacheUitil cacheDirectoryPath:file]);
+    return SWArchieveObject(anObject, [SWQuickCacheUitil cacheDirectoryPath:file]);
 }
 
 + (BOOL)cacheDirectoryDelete:(NSString *)file
 {
-    if (GJCFStringIsNull(file)) {
+    if (SWStringIsNull(file)) {
         return NO;
     }
-    return GJCFFileDeleteFile([GJCFQuickCacheUitil cacheDirectoryPath:file]);
+    return SWFileDeleteFile([SWQuickCacheUitil cacheDirectoryPath:file]);
 }
 
 
 + (BOOL)documentDirectorySave:(id<NSCoding>)anObject withFileName:(NSString *)file
 {
-    if (GJCFCheckObjectNull(anObject) || GJCFStringIsNull(file)) {
+    if (SWCheckObjectNull(anObject) || SWStringIsNull(file)) {
         return NO;
     }
     
-    return GJCFArchieveObject(anObject, [GJCFQuickCacheUitil documentDirectoryPath:file]);
+    return SWArchieveObject(anObject, [SWQuickCacheUitil documentDirectoryPath:file]);
 }
 
 + (BOOL)documentDirectoryDelete:(NSString *)file
 {
-    if (GJCFStringIsNull(file)) {
+    if (SWStringIsNull(file)) {
         return NO;
     }
-    return GJCFFileDeleteFile([GJCFQuickCacheUitil documentDirectoryPath:file]);
+    return SWFileDeleteFile([SWQuickCacheUitil documentDirectoryPath:file]);
 }
 
 @end

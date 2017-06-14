@@ -1,5 +1,5 @@
 //
-//  GJCFUitils.h
+//  SWUitils.h
 //  GJCommonFoundation
 //
 //  Created by ZYVincent on 14-10-16.
@@ -17,55 +17,56 @@
 /**
  *  相对布局可以使用
  */
-#import "UIView+GJCFViewFrameUitil.h"
+#import "UIView+SWViewFrameUitil.h"
 
 /**
  *  GCD工具
  */
-#import "GJCFDispatchCenterUitil.h"
+#import "SWDispatchCenterUitil.h"
 
 /**
  *  GJCD工具宏定义
  */
-#import "GJCFDispatchMacrocDefine.h"
+#import "SWDispatchMacrocDefine.h"
 
 /**
  *  字符串工具
  */
-#import "GJCFStringUitil.h"
+#import "SWStringUitil.h"
 
 /**
  *  字符串工具宏定义
  */
-#import "GJCFStringMacrocDefine.h"
+//#import "SWStringMacrocDefine.h"
+#import "SWStringMacrocDefine.h"
 
 /**
  *  系统相关工具
  */
-#import "GJCFSystemUitil.h"
+#import "SWSystemUitil.h"
 
 /**
  *  系统相关工具宏定义
  */
-#import "GJCFSystemMacrocDefine.h"
+#import "SWSystemMacrocDefine.h"
 
 /**
  *  快速存取工具
  */
-#import "GJCFQuickCacheUitil.h"
+#import "SWQuickCacheUitil.h"
 
 /**
  *  快速存取工具宏定义
  */
-#import "GJCFQuickCacheMacrocDefine.h"
+#import "SWQuickCacheMacrocDefine.h"
 
 /**
  *  UI相关工具宏
  */
-#import "GJCFQuickUIMacrocDefine.h"
+#import "SWQuickUIMacrocDefine.h"
 
 /**
  *  NSDate相关工具宏
  */
-#import "GJCFDateUitilMacrocDefine.h"
+#import "SWDateUitilMacrocDefine.h"
 

@@ -12,20 +12,20 @@
 		36BD6F141B4AA543001D8588 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36BD6F131B4AA543001D8588 /* Images.xcassets */; };
 		36BD6F171B4AA543001D8588 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BD6F151B4AA543001D8588 /* LaunchScreen.xib */; };
 		36BD6F231B4AA543001D8588 /* GJCFUitilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F221B4AA543001D8588 /* GJCFUitilsTests.m */; };
-		36BD6F521B4AA563001D8588 /* GJCFDateUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F2F1B4AA563001D8588 /* GJCFDateUitil.m */; };
-		36BD6F531B4AA563001D8588 /* GJCFDateUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F2F1B4AA563001D8588 /* GJCFDateUitil.m */; };
-		36BD6F561B4AA563001D8588 /* GJCFDispatchCenterUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F371B4AA563001D8588 /* GJCFDispatchCenterUitil.m */; };
-		36BD6F571B4AA563001D8588 /* GJCFDispatchCenterUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F371B4AA563001D8588 /* GJCFDispatchCenterUitil.m */; };
-		36BD6F5A1B4AA563001D8588 /* GJCFQuickCacheUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F401B4AA563001D8588 /* GJCFQuickCacheUitil.m */; };
-		36BD6F5B1B4AA563001D8588 /* GJCFQuickCacheUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F401B4AA563001D8588 /* GJCFQuickCacheUitil.m */; };
-		36BD6F5C1B4AA563001D8588 /* GJCFQuickUIUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F441B4AA563001D8588 /* GJCFQuickUIUitil.m */; };
-		36BD6F5D1B4AA563001D8588 /* GJCFQuickUIUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F441B4AA563001D8588 /* GJCFQuickUIUitil.m */; };
-		36BD6F5E1B4AA563001D8588 /* GJCFStringUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F481B4AA563001D8588 /* GJCFStringUitil.m */; };
-		36BD6F5F1B4AA563001D8588 /* GJCFStringUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F481B4AA563001D8588 /* GJCFStringUitil.m */; };
-		36BD6F601B4AA563001D8588 /* GJCFSystemUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F4C1B4AA563001D8588 /* GJCFSystemUitil.m */; };
-		36BD6F611B4AA563001D8588 /* GJCFSystemUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F4C1B4AA563001D8588 /* GJCFSystemUitil.m */; };
-		36BD6F641B4AA563001D8588 /* UIView+GJCFViewFrameUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F511B4AA563001D8588 /* UIView+GJCFViewFrameUitil.m */; };
-		36BD6F651B4AA563001D8588 /* UIView+GJCFViewFrameUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F511B4AA563001D8588 /* UIView+GJCFViewFrameUitil.m */; };
+		36BD6F521B4AA563001D8588 /* SWDateUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F2F1B4AA563001D8588 /* SWDateUitil.m */; };
+		36BD6F531B4AA563001D8588 /* SWDateUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F2F1B4AA563001D8588 /* SWDateUitil.m */; };
+		36BD6F561B4AA563001D8588 /* SWDispatchCenterUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F371B4AA563001D8588 /* SWDispatchCenterUitil.m */; };
+		36BD6F571B4AA563001D8588 /* SWDispatchCenterUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F371B4AA563001D8588 /* SWDispatchCenterUitil.m */; };
+		36BD6F5A1B4AA563001D8588 /* SWQuickCacheUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F401B4AA563001D8588 /* SWQuickCacheUitil.m */; };
+		36BD6F5B1B4AA563001D8588 /* SWQuickCacheUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F401B4AA563001D8588 /* SWQuickCacheUitil.m */; };
+		36BD6F5C1B4AA563001D8588 /* SWQuickUIUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F441B4AA563001D8588 /* SWQuickUIUitil.m */; };
+		36BD6F5D1B4AA563001D8588 /* SWQuickUIUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F441B4AA563001D8588 /* SWQuickUIUitil.m */; };
+		36BD6F5E1B4AA563001D8588 /* SWStringUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F481B4AA563001D8588 /* SWStringUitil.m */; };
+		36BD6F5F1B4AA563001D8588 /* SWStringUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F481B4AA563001D8588 /* SWStringUitil.m */; };
+		36BD6F601B4AA563001D8588 /* SWSystemUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F4C1B4AA563001D8588 /* SWSystemUitil.m */; };
+		36BD6F611B4AA563001D8588 /* SWSystemUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F4C1B4AA563001D8588 /* SWSystemUitil.m */; };
+		36BD6F641B4AA563001D8588 /* UIView+SWViewFrameUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F511B4AA563001D8588 /* UIView+SWViewFrameUitil.m */; };
+		36BD6F651B4AA563001D8588 /* UIView+SWViewFrameUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F511B4AA563001D8588 /* UIView+SWViewFrameUitil.m */; };
 		36BD6F751B4AA586001D8588 /* TVGDebugLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F6A1B4AA586001D8588 /* TVGDebugLogger.m */; };
 		36BD6F761B4AA586001D8588 /* TVGDebugLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F6A1B4AA586001D8588 /* TVGDebugLogger.m */; };
 		36BD6F771B4AA586001D8588 /* TVGDebugModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BD6F6C1B4AA586001D8588 /* TVGDebugModel.m */; };
@@ -69,27 +69,27 @@
 		36BD6F1C1B4AA543001D8588 /* GJCFUitilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GJCFUitilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BD6F211B4AA543001D8588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36BD6F221B4AA543001D8588 /* GJCFUitilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GJCFUitilsTests.m; sourceTree = "<group>"; };
-		36BD6F2E1B4AA563001D8588 /* GJCFDateUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFDateUitil.h; sourceTree = "<group>"; };
-		36BD6F2F1B4AA563001D8588 /* GJCFDateUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFDateUitil.m; sourceTree = "<group>"; };
-		36BD6F301B4AA563001D8588 /* GJCFDateUitilMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFDateUitilMacrocDefine.h; sourceTree = "<group>"; };
-		36BD6F361B4AA563001D8588 /* GJCFDispatchCenterUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFDispatchCenterUitil.h; sourceTree = "<group>"; };
-		36BD6F371B4AA563001D8588 /* GJCFDispatchCenterUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFDispatchCenterUitil.m; sourceTree = "<group>"; };
-		36BD6F381B4AA563001D8588 /* GJCFDispatchMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFDispatchMacrocDefine.h; sourceTree = "<group>"; };
-		36BD6F391B4AA563001D8588 /* GJCFUitils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFUitils.h; sourceTree = "<group>"; };
-		36BD6F3E1B4AA563001D8588 /* GJCFQuickCacheMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFQuickCacheMacrocDefine.h; sourceTree = "<group>"; };
-		36BD6F3F1B4AA563001D8588 /* GJCFQuickCacheUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFQuickCacheUitil.h; sourceTree = "<group>"; };
-		36BD6F401B4AA563001D8588 /* GJCFQuickCacheUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFQuickCacheUitil.m; sourceTree = "<group>"; };
-		36BD6F421B4AA563001D8588 /* GJCFQuickUIMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFQuickUIMacrocDefine.h; sourceTree = "<group>"; };
-		36BD6F431B4AA563001D8588 /* GJCFQuickUIUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFQuickUIUitil.h; sourceTree = "<group>"; };
-		36BD6F441B4AA563001D8588 /* GJCFQuickUIUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFQuickUIUitil.m; sourceTree = "<group>"; };
-		36BD6F461B4AA563001D8588 /* GJCFStringMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFStringMacrocDefine.h; sourceTree = "<group>"; };
-		36BD6F471B4AA563001D8588 /* GJCFStringUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFStringUitil.h; sourceTree = "<group>"; };
-		36BD6F481B4AA563001D8588 /* GJCFStringUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFStringUitil.m; sourceTree = "<group>"; };
-		36BD6F4A1B4AA563001D8588 /* GJCFSystemMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFSystemMacrocDefine.h; sourceTree = "<group>"; };
-		36BD6F4B1B4AA563001D8588 /* GJCFSystemUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJCFSystemUitil.h; sourceTree = "<group>"; };
-		36BD6F4C1B4AA563001D8588 /* GJCFSystemUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJCFSystemUitil.m; sourceTree = "<group>"; };
-		36BD6F501B4AA563001D8588 /* UIView+GJCFViewFrameUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GJCFViewFrameUitil.h"; sourceTree = "<group>"; };
-		36BD6F511B4AA563001D8588 /* UIView+GJCFViewFrameUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GJCFViewFrameUitil.m"; sourceTree = "<group>"; };
+		36BD6F2E1B4AA563001D8588 /* SWDateUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDateUitil.h; sourceTree = "<group>"; };
+		36BD6F2F1B4AA563001D8588 /* SWDateUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDateUitil.m; sourceTree = "<group>"; };
+		36BD6F301B4AA563001D8588 /* SWDateUitilMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDateUitilMacrocDefine.h; sourceTree = "<group>"; };
+		36BD6F361B4AA563001D8588 /* SWDispatchCenterUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDispatchCenterUitil.h; sourceTree = "<group>"; };
+		36BD6F371B4AA563001D8588 /* SWDispatchCenterUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDispatchCenterUitil.m; sourceTree = "<group>"; };
+		36BD6F381B4AA563001D8588 /* SWDispatchMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDispatchMacrocDefine.h; sourceTree = "<group>"; };
+		36BD6F391B4AA563001D8588 /* SWUitils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUitils.h; sourceTree = "<group>"; };
+		36BD6F3E1B4AA563001D8588 /* SWQuickCacheMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWQuickCacheMacrocDefine.h; sourceTree = "<group>"; };
+		36BD6F3F1B4AA563001D8588 /* SWQuickCacheUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWQuickCacheUitil.h; sourceTree = "<group>"; };
+		36BD6F401B4AA563001D8588 /* SWQuickCacheUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWQuickCacheUitil.m; sourceTree = "<group>"; };
+		36BD6F421B4AA563001D8588 /* SWQuickUIMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWQuickUIMacrocDefine.h; sourceTree = "<group>"; };
+		36BD6F431B4AA563001D8588 /* SWQuickUIUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWQuickUIUitil.h; sourceTree = "<group>"; };
+		36BD6F441B4AA563001D8588 /* SWQuickUIUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWQuickUIUitil.m; sourceTree = "<group>"; };
+		36BD6F461B4AA563001D8588 /* SWStringMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStringMacrocDefine.h; sourceTree = "<group>"; };
+		36BD6F471B4AA563001D8588 /* SWStringUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWStringUitil.h; sourceTree = "<group>"; };
+		36BD6F481B4AA563001D8588 /* SWStringUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWStringUitil.m; sourceTree = "<group>"; };
+		36BD6F4A1B4AA563001D8588 /* SWSystemMacrocDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSystemMacrocDefine.h; sourceTree = "<group>"; };
+		36BD6F4B1B4AA563001D8588 /* SWSystemUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSystemUitil.h; sourceTree = "<group>"; };
+		36BD6F4C1B4AA563001D8588 /* SWSystemUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSystemUitil.m; sourceTree = "<group>"; };
+		36BD6F501B4AA563001D8588 /* UIView+SWViewFrameUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SWViewFrameUitil.h"; sourceTree = "<group>"; };
+		36BD6F511B4AA563001D8588 /* UIView+SWViewFrameUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SWViewFrameUitil.m"; sourceTree = "<group>"; };
 		36BD6F691B4AA586001D8588 /* TVGDebugLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVGDebugLogger.h; sourceTree = "<group>"; };
 		36BD6F6A1B4AA586001D8588 /* TVGDebugLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVGDebugLogger.m; sourceTree = "<group>"; };
 		36BD6F6B1B4AA586001D8588 /* TVGDebugModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVGDebugModel.h; sourceTree = "<group>"; };
@@ -194,9 +194,9 @@
 		36BD6F2C1B4AA563001D8588 /* GJCFUitils */ = {
 			isa = PBXGroup;
 			children = (
+				36BD6F391B4AA563001D8588 /* SWUitils.h */,
 				36BD6F2D1B4AA563001D8588 /* DateUitil */,
 				36BD6F351B4AA563001D8588 /* DispatchCenterUitil */,
-				36BD6F391B4AA563001D8588 /* GJCFUitils.h */,
 				36BD6F3D1B4AA563001D8588 /* QuickCacheUitil */,
 				36BD6F411B4AA563001D8588 /* QuickUIUitil */,
 				36BD6F451B4AA563001D8588 /* StringUitil */,
@@ -209,9 +209,9 @@
 		36BD6F2D1B4AA563001D8588 /* DateUitil */ = {
 			isa = PBXGroup;
 			children = (
-				36BD6F2E1B4AA563001D8588 /* GJCFDateUitil.h */,
-				36BD6F2F1B4AA563001D8588 /* GJCFDateUitil.m */,
-				36BD6F301B4AA563001D8588 /* GJCFDateUitilMacrocDefine.h */,
+				36BD6F2E1B4AA563001D8588 /* SWDateUitil.h */,
+				36BD6F2F1B4AA563001D8588 /* SWDateUitil.m */,
+				36BD6F301B4AA563001D8588 /* SWDateUitilMacrocDefine.h */,
 			);
 			path = DateUitil;
 			sourceTree = "<group>";
@@ -219,9 +219,9 @@
 		36BD6F351B4AA563001D8588 /* DispatchCenterUitil */ = {
 			isa = PBXGroup;
 			children = (
-				36BD6F361B4AA563001D8588 /* GJCFDispatchCenterUitil.h */,
-				36BD6F371B4AA563001D8588 /* GJCFDispatchCenterUitil.m */,
-				36BD6F381B4AA563001D8588 /* GJCFDispatchMacrocDefine.h */,
+				36BD6F361B4AA563001D8588 /* SWDispatchCenterUitil.h */,
+				36BD6F371B4AA563001D8588 /* SWDispatchCenterUitil.m */,
+				36BD6F381B4AA563001D8588 /* SWDispatchMacrocDefine.h */,
 			);
 			path = DispatchCenterUitil;
 			sourceTree = "<group>";
@@ -229,9 +229,9 @@
 		36BD6F3D1B4AA563001D8588 /* QuickCacheUitil */ = {
 			isa = PBXGroup;
 			children = (
-				36BD6F3E1B4AA563001D8588 /* GJCFQuickCacheMacrocDefine.h */,
-				36BD6F3F1B4AA563001D8588 /* GJCFQuickCacheUitil.h */,
-				36BD6F401B4AA563001D8588 /* GJCFQuickCacheUitil.m */,
+				36BD6F3E1B4AA563001D8588 /* SWQuickCacheMacrocDefine.h */,
+				36BD6F3F1B4AA563001D8588 /* SWQuickCacheUitil.h */,
+				36BD6F401B4AA563001D8588 /* SWQuickCacheUitil.m */,
 			);
 			path = QuickCacheUitil;
 			sourceTree = "<group>";
@@ -239,9 +239,9 @@
 		36BD6F411B4AA563001D8588 /* QuickUIUitil */ = {
 			isa = PBXGroup;
 			children = (
-				36BD6F421B4AA563001D8588 /* GJCFQuickUIMacrocDefine.h */,
-				36BD6F431B4AA563001D8588 /* GJCFQuickUIUitil.h */,
-				36BD6F441B4AA563001D8588 /* GJCFQuickUIUitil.m */,
+				36BD6F421B4AA563001D8588 /* SWQuickUIMacrocDefine.h */,
+				36BD6F431B4AA563001D8588 /* SWQuickUIUitil.h */,
+				36BD6F441B4AA563001D8588 /* SWQuickUIUitil.m */,
 			);
 			path = QuickUIUitil;
 			sourceTree = "<group>";
@@ -249,9 +249,9 @@
 		36BD6F451B4AA563001D8588 /* StringUitil */ = {
 			isa = PBXGroup;
 			children = (
-				36BD6F461B4AA563001D8588 /* GJCFStringMacrocDefine.h */,
-				36BD6F471B4AA563001D8588 /* GJCFStringUitil.h */,
-				36BD6F481B4AA563001D8588 /* GJCFStringUitil.m */,
+				36BD6F461B4AA563001D8588 /* SWStringMacrocDefine.h */,
+				36BD6F471B4AA563001D8588 /* SWStringUitil.h */,
+				36BD6F481B4AA563001D8588 /* SWStringUitil.m */,
 			);
 			path = StringUitil;
 			sourceTree = "<group>";
@@ -259,9 +259,9 @@
 		36BD6F491B4AA563001D8588 /* SystemUitil */ = {
 			isa = PBXGroup;
 			children = (
-				36BD6F4A1B4AA563001D8588 /* GJCFSystemMacrocDefine.h */,
-				36BD6F4B1B4AA563001D8588 /* GJCFSystemUitil.h */,
-				36BD6F4C1B4AA563001D8588 /* GJCFSystemUitil.m */,
+				36BD6F4A1B4AA563001D8588 /* SWSystemMacrocDefine.h */,
+				36BD6F4B1B4AA563001D8588 /* SWSystemUitil.h */,
+				36BD6F4C1B4AA563001D8588 /* SWSystemUitil.m */,
 			);
 			path = SystemUitil;
 			sourceTree = "<group>";
@@ -269,8 +269,8 @@
 		36BD6F4D1B4AA563001D8588 /* UitilCategory */ = {
 			isa = PBXGroup;
 			children = (
-				36BD6F501B4AA563001D8588 /* UIView+GJCFViewFrameUitil.h */,
-				36BD6F511B4AA563001D8588 /* UIView+GJCFViewFrameUitil.m */,
+				36BD6F501B4AA563001D8588 /* UIView+SWViewFrameUitil.h */,
+				36BD6F511B4AA563001D8588 /* UIView+SWViewFrameUitil.m */,
 			);
 			path = UitilCategory;
 			sourceTree = "<group>";
@@ -410,17 +410,17 @@
 			files = (
 				36BD6F7D1B4AA586001D8588 /* TVGDebugViewController.m in Sources */,
 				36BD6F771B4AA586001D8588 /* TVGDebugModel.m in Sources */,
-				36BD6F641B4AA563001D8588 /* UIView+GJCFViewFrameUitil.m in Sources */,
-				36BD6F521B4AA563001D8588 /* GJCFDateUitil.m in Sources */,
+				36BD6F641B4AA563001D8588 /* UIView+SWViewFrameUitil.m in Sources */,
+				36BD6F521B4AA563001D8588 /* SWDateUitil.m in Sources */,
 				36BD6F861B4AA847001D8588 /* TVGDebugConsoleViewController.m in Sources */,
-				36BD6F5C1B4AA563001D8588 /* GJCFQuickUIUitil.m in Sources */,
-				36BD6F601B4AA563001D8588 /* GJCFSystemUitil.m in Sources */,
-				36BD6F5A1B4AA563001D8588 /* GJCFQuickCacheUitil.m in Sources */,
+				36BD6F5C1B4AA563001D8588 /* SWQuickUIUitil.m in Sources */,
+				36BD6F601B4AA563001D8588 /* SWSystemUitil.m in Sources */,
+				36BD6F5A1B4AA563001D8588 /* SWQuickCacheUitil.m in Sources */,
 				36BD6F8F1B4AB443001D8588 /* AnimationDemoViewController.m in Sources */,
 				36BD6F821B4AA7C9001D8588 /* DateDemoViewController.m in Sources */,
 				36BD6F7B1B4AA586001D8588 /* TVGDebugSectionInfo.m in Sources */,
-				36BD6F5E1B4AA563001D8588 /* GJCFStringUitil.m in Sources */,
-				36BD6F561B4AA563001D8588 /* GJCFDispatchCenterUitil.m in Sources */,
+				36BD6F5E1B4AA563001D8588 /* SWStringUitil.m in Sources */,
+				36BD6F561B4AA563001D8588 /* SWDispatchCenterUitil.m in Sources */,
 				36BD6F931B4AB47E001D8588 /* QuickCacheDemoViewController.m in Sources */,
 				36BD6F751B4AA586001D8588 /* TVGDebugLogger.m in Sources */,
 				36BD6F8B1B4AACE9001D8588 /* StringDemoViewController.m in Sources */,
@@ -435,22 +435,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				36BD6F8C1B4AACE9001D8588 /* StringDemoViewController.m in Sources */,
-				36BD6F5D1B4AA563001D8588 /* GJCFQuickUIUitil.m in Sources */,
+				36BD6F5D1B4AA563001D8588 /* SWQuickUIUitil.m in Sources */,
 				36BD6F761B4AA586001D8588 /* TVGDebugLogger.m in Sources */,
 				36BD6F7A1B4AA586001D8588 /* TVGDebugQuickUI.m in Sources */,
 				36BD6F231B4AA543001D8588 /* GJCFUitilsTests.m in Sources */,
 				36BD6F871B4AA847001D8588 /* TVGDebugConsoleViewController.m in Sources */,
-				36BD6F531B4AA563001D8588 /* GJCFDateUitil.m in Sources */,
+				36BD6F531B4AA563001D8588 /* SWDateUitil.m in Sources */,
 				36BD6F831B4AA7C9001D8588 /* DateDemoViewController.m in Sources */,
 				36BD6F941B4AB47E001D8588 /* QuickCacheDemoViewController.m in Sources */,
-				36BD6F651B4AA563001D8588 /* UIView+GJCFViewFrameUitil.m in Sources */,
-				36BD6F5F1B4AA563001D8588 /* GJCFStringUitil.m in Sources */,
+				36BD6F651B4AA563001D8588 /* UIView+SWViewFrameUitil.m in Sources */,
+				36BD6F5F1B4AA563001D8588 /* SWStringUitil.m in Sources */,
 				36BD6F7E1B4AA586001D8588 /* TVGDebugViewController.m in Sources */,
 				36BD6F7C1B4AA586001D8588 /* TVGDebugSectionInfo.m in Sources */,
-				36BD6F571B4AA563001D8588 /* GJCFDispatchCenterUitil.m in Sources */,
+				36BD6F571B4AA563001D8588 /* SWDispatchCenterUitil.m in Sources */,
 				36BD6F901B4AB443001D8588 /* AnimationDemoViewController.m in Sources */,
-				36BD6F5B1B4AA563001D8588 /* GJCFQuickCacheUitil.m in Sources */,
-				36BD6F611B4AA563001D8588 /* GJCFSystemUitil.m in Sources */,
+				36BD6F5B1B4AA563001D8588 /* SWQuickCacheUitil.m in Sources */,
+				36BD6F611B4AA563001D8588 /* SWSystemUitil.m in Sources */,
 				36BD6F781B4AA586001D8588 /* TVGDebugModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,6 +634,7 @@
 				36BD6F281B4AA543001D8588 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		36BD6F291B4AA543001D8588 /* Build configuration list for PBXNativeTarget "GJCFUitilsTests" */ = {
 			isa = XCConfigurationList;
@@ -642,6 +643,7 @@
 				36BD6F2B1B4AA543001D8588 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

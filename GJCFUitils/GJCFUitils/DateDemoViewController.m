@@ -7,7 +7,7 @@
 //
 
 #import "DateDemoViewController.h"
-#import "GJCFUitils.h"
+#import "SWUitils.h"
 
 @interface DateDemoViewController ()
 
@@ -19,13 +19,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSDate *date = GJCFDateFromString(@"2014-12-13");
+    NSDate *date = SWDateFromString(@"2014-12-13");
     
-    NSString *timeAgo = GJCFDateTimeAgoString(date);
+    NSString *timeAgo = SWDateTimeAgoString(date);
     
     [self addDebugMessage:timeAgo];
     
-    NSString *weekString = GJCFDateGetWeekDayString(date);
+    NSString *weekString = SWDateGetWeekDayString(date);
     
     [self addDebugMessage:weekString];
 }

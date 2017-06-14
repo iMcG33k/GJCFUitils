@@ -1,6 +1,6 @@
 //
 //  QuickCacheDemoViewController.m
-//  GJCFUitils
+//  SWUitils
 //
 //  Created by ZYVincent on 15/7/6.
 //  Copyright (c) 2015年 ZYProSoft. All rights reserved.
@@ -20,11 +20,11 @@
     
     NSString *appCacheFileName = @"stringCacheDir";
     
-    NSString *stringCachePathDir = GJCFAppCachePath(appCacheFileName);
+    NSString *stringCachePathDir = SWAppCachePath(appCacheFileName);
     
-    if (!GJCFFileDirectoryIsExist(stringCachePathDir)) {
+    if (!SWFileDirectoryIsExist(stringCachePathDir)) {
         
-        GJCFFileDirectoryCreate(stringCachePathDir);
+        SWFileDirectoryCreate(stringCachePathDir);
     }
     
     NSString *stringFileName = @"birthday.txt";

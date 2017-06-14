@@ -1,22 +1,22 @@
 //
-//  GJCFQuickUIUitil.m
+//  SWQuickUIUitil.m
 //  GJCommonFoundation
 //
 //  Created by ZYVincent on 14-10-22.
 //  Copyright (c) 2014年 ZYProSoft. All rights reserved.
 //
 
-#import "GJCFQuickUIUitil.h"
-#import "GJCFUitils.h"
+#import "SWQuickUIUitil.h"
+#import "SWUitils.h"
 
-@interface GJCFQuickUIUitil ()
+@interface SWQuickUIUitil ()
 
 @property (nonatomic,strong)NSMutableDictionary *repeatActionInfoDict;
 @property (nonatomic,strong)NSTimer *repeatTimer;
 
 @end
 
-@implementation GJCFQuickUIUitil
+@implementation SWQuickUIUitil
 
 - (instancetype)init
 {
@@ -29,7 +29,7 @@
 
 + (UIColor *)colorFromRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue
 {
-   return [GJCFQuickUIUitil colorFromRed:red green:green blue:blue withAlpha:1.0];
+   return [SWQuickUIUitil colorFromRed:red green:green blue:blue withAlpha:1.0];
 }
 
 + (UIColor *)colorFromRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue withAlpha:(CGFloat)alpha
@@ -39,7 +39,7 @@
 
 + (UIColor *)colorFromHexString:(NSString *)hexString
 {
-    if (GJCFStringIsNull(hexString)) {
+    if (SWStringIsNull(hexString)) {
         return nil;
     }
     
@@ -53,7 +53,7 @@
 
 + (CGContextRef)getTextCTMContextRefFromView:(UIView *)aView
 {
-    if (GJCFCheckObjectNull(aView)) {
+    if (SWCheckObjectNull(aView)) {
         return nil;
     }
     
@@ -73,7 +73,7 @@
 /* 根据颜色创建图片 */
 + (UIImage *)imageForColor:(UIColor*)aColor withSize:(CGSize)aSize
 {
-    if (GJCFCheckObjectNull(aColor)) {
+    if (SWCheckObjectNull(aColor)) {
         return nil;
     }
     
@@ -96,12 +96,12 @@
 
 + (UIImage *)viewScreenShot:(UIView *)aView
 {
-    return [GJCFQuickUIUitil layerScreenShot:aView.layer];
+    return [SWQuickUIUitil layerScreenShot:aView.layer];
 }
 
 + (UIImage *)layerScreenShot:(CALayer *)layer
 {
-    if (GJCFCheckObjectNull(layer)) {
+    if (SWCheckObjectNull(layer)) {
         return nil;
     }
     
@@ -114,7 +114,7 @@
 
 + (UIImage *)combineImage:(UIImage *)backgroundImage withMaskImage:(UIImage *)maskImage
 {
-    if (GJCFCheckObjectNull(backgroundImage)) {
+    if (SWCheckObjectNull(backgroundImage)) {
         return nil;
     }
     UIGraphicsBeginImageContext(backgroundImage.size);
@@ -237,7 +237,7 @@
 
 + (UIImage *)partImage:(UIImage *)aImage withRect:(CGRect)partRect
 {
-    if (GJCFCheckObjectNull(aImage)) {
+    if (SWCheckObjectNull(aImage)) {
         return nil;
     }
     
@@ -253,7 +253,7 @@
 
 + (UIImage *)correctFullSolutionImageFromALAsset:(ALAsset *)asset withScaleSize:(CGFloat)scaleSize
 {
-    if (GJCFCheckObjectNull(asset)) {
+    if (SWCheckObjectNull(asset)) {
         return nil;
     }
     
@@ -261,22 +261,22 @@
     
     UIImage *fullSolutionImage = [UIImage imageWithCGImage:defaultReprensent.fullResolutionImage scale:1.0 orientation:(UIImageOrientation)[defaultReprensent orientation]];
     
-    return [GJCFQuickUIUitil correctImageOrientation:fullSolutionImage withScaleSize:scaleSize];
+    return [SWQuickUIUitil correctImageOrientation:fullSolutionImage withScaleSize:scaleSize];
 }
 
 + (UIImage *)correctFullSolutionImageFromALAsset:(ALAsset *)asset
 {
-    return [GJCFQuickUIUitil correctFullSolutionImageFromALAsset:asset withScaleSize:1.0];
+    return [SWQuickUIUitil correctFullSolutionImageFromALAsset:asset withScaleSize:1.0];
 }
 
 + (UIImage *)correctImageOrientation:(UIImage *)aImage
 {
-    return [GJCFQuickUIUitil correctImageOrientation:aImage withScaleSize:1.0];
+    return [SWQuickUIUitil correctImageOrientation:aImage withScaleSize:1.0];
 }
 
 + (UIImage *)correctImageOrientation:(UIImage *)aImage  withScaleSize:(CGFloat)scale
 {
-    if (GJCFCheckObjectNull(aImage)) {
+    if (SWCheckObjectNull(aImage)) {
         return nil;
     }
     
@@ -384,7 +384,7 @@
 
 + (UIImage *)roundImage:(UIImage *)aImage
 {
-    if (GJCFCheckObjectNull(aImage)) {
+    if (SWCheckObjectNull(aImage)) {
         return nil;
     }
     
@@ -395,7 +395,7 @@
     CGFloat originX = (aImage.size.width - itemWidth)/2;
     CGFloat originY = (aImage.size.height - itemWidth)/2;
     CGRect imageRect = (CGRect){originX,originY,itemWidth,itemWidth};
-    aImage = [GJCFQuickUIUitil partImage:aImage withRect:imageRect];
+    aImage = [SWQuickUIUitil partImage:aImage withRect:imageRect];
     imageRect.origin = CGPointZero;//恢复
     
     UIGraphicsBeginImageContextWithOptions((CGSize){itemWidth,itemWidth}, 1.0, 0.0f);
@@ -442,7 +442,7 @@
 
 + (UIImage *)imageWithName:(NSString *)imageName
 {
-    if (GJCFStringIsNull(imageName)) {
+    if (SWStringIsNull(imageName)) {
         return nil;
     }
     return [UIImage imageNamed:imageName];
@@ -450,7 +450,7 @@
 
 + (UIImage *)imageWithFilePath:(NSString *)filePath
 {
-    if (GJCFStringIsNull(filePath)) {
+    if (SWStringIsNull(filePath)) {
         return nil;
     }
     return [UIImage imageWithContentsOfFile:filePath];
@@ -458,17 +458,17 @@
 
 + (UIImage *)imageUnArchievedFromFilePath:(NSString *)filePath
 {
-    return GJCFUnArchieveObject(filePath);
+    return SWUnArchieveObject(filePath);
 }
 
 + (UIImage *)gradientLinearImageFromColor:(UIColor *)fromColor withToColor:(UIColor *)toColor withImageSize:(CGSize)size
 {
-    return [GJCFQuickUIUitil gradientLinearImageFromColors:@[fromColor,toColor,fromColor] withImageSize:size];
+    return [SWQuickUIUitil gradientLinearImageFromColors:@[fromColor,toColor,fromColor] withImageSize:size];
 }
 
 + (UIImage *)gradientLinearImageFromColors:(NSArray *)colors withImageSize:(CGSize)size;
 {    
-    if (GJCFCheckObjectNull(colors)) {
+    if (SWCheckObjectNull(colors)) {
         return nil;
     }
     
@@ -529,12 +529,12 @@
 
 + (UIImage *)gradientRadialImageFromColor:(UIColor *)fromColor withToColor:(UIColor *)toColor withImageSize:(CGSize)size
 {
-    return [GJCFQuickUIUitil gradientRadialImageFromColors:@[fromColor,toColor] withImageSize:size];
+    return [SWQuickUIUitil gradientRadialImageFromColors:@[fromColor,toColor] withImageSize:size];
 }
 
 + (UIImage *)gradientRadialImageFromColors:(NSArray *)colors withImageSize:(CGSize)size
 {
-    if (GJCFCheckObjectNull(colors)) {
+    if (SWCheckObjectNull(colors)) {
         return nil;
     }
     
@@ -593,12 +593,12 @@
 
 + (UIImage *)gridImageHorizonByLineGap:(CGFloat)lineGap withLineColor:(UIColor *)lineColor withImageSize:(CGSize)size
 {
-    return [GJCFQuickUIUitil gridImageByHoriLineGap:lineGap withVerticalLineGap:0.f withLineColor:lineColor withImageSize:size];
+    return [SWQuickUIUitil gridImageByHoriLineGap:lineGap withVerticalLineGap:0.f withLineColor:lineColor withImageSize:size];
 }
 
 + (UIImage *)gridImageVerticalByLineGap:(CGFloat)lineGap withLineColor:(UIColor *)lineColor withImageSize:(CGSize)size
 {
-    return [GJCFQuickUIUitil gridImageByHoriLineGap:0.f withVerticalLineGap:lineGap withLineColor:lineColor withImageSize:size];
+    return [SWQuickUIUitil gridImageByHoriLineGap:0.f withVerticalLineGap:lineGap withLineColor:lineColor withImageSize:size];
 }
 
 + (UIImage *)gridImageByHoriLineGap:(CGFloat)hLineGap withVerticalLineGap:(CGFloat)vLineGap withLineColor:(UIColor *)lineColor withImageSize:(CGSize)size
@@ -649,7 +649,7 @@
 
 + (UIImage *)stretchImage:(UIImage *)originImage withTopOffset:(CGFloat)top withLeftOffset:(CGFloat)left
 {
-    if (GJCFCheckObjectNull(originImage)) {
+    if (SWCheckObjectNull(originImage)) {
         return nil;
     }
     return [originImage stretchableImageWithLeftCapWidth:left topCapHeight:top];
@@ -657,7 +657,7 @@
 
 + (UIImage *)resizeImage:(UIImage *)originImage withEdgeTop:(CGFloat)top withEdgeBottom:(CGFloat)bottom withEdgeLeft:(CGFloat)left withEdgeRight:(CGFloat)right
 {
-    if (GJCFCheckObjectNull(originImage)) {
+    if (SWCheckObjectNull(originImage)) {
         return nil;
     }
     return [originImage resizableImageWithCapInsets:UIEdgeInsetsMake(top, left, bottom, right) resizingMode:UIImageResizingModeStretch];
@@ -665,16 +665,16 @@
 
 + (void)animationDuration:(NSTimeInterval)duration action:(dispatch_block_t)block
 {
-    [GJCFQuickUIUitil animationDelay:0 animationDuration:duration action:block];
+    [SWQuickUIUitil animationDelay:0 animationDuration:duration action:block];
 }
 
 + (void)animationDelay:(NSTimeInterval )delaySecond animationDuration:(NSTimeInterval)duration action:(dispatch_block_t)block
 {
-    if (GJCFCheckObjectNull(block)) {
+    if (SWCheckObjectNull(block)) {
         return;
     }
     
-    GJCFAsyncMainQueueDelay(delaySecond, ^{
+    SWAsyncMainQueueDelay(delaySecond, ^{
        
         [UIView animateWithDuration:duration animations:block];
         
@@ -683,12 +683,12 @@
 
 + (void)animationView:(UIView *)view withDuration:(NSTimeInterval)duration action:(dispatch_block_t)block withOptions:(UIViewAnimationOptions)options completionBlock:(GJCFQuickAnimationCompletionBlock)completion
 {
-    [GJCFQuickUIUitil animationView:view delay:0 animationDuration:duration action:block withOptions:options completionBlock:completion];
+    [SWQuickUIUitil animationView:view delay:0 animationDuration:duration action:block withOptions:options completionBlock:completion];
 }
 
 + (void)animationView:(UIView *)view delay:(NSTimeInterval)delaySecond animationDuration:(NSTimeInterval)duration action:(dispatch_block_t)block withOptions:(UIViewAnimationOptions)options completionBlock:(GJCFQuickAnimationCompletionBlock)completion
 {
-    if (GJCFCheckObjectNull(view)) {
+    if (SWCheckObjectNull(view)) {
         return;
     }
     [UIView transitionWithView:view duration:duration options:options animations:block completion:completion];
@@ -696,58 +696,58 @@
 
 + (void)defaultHiddenShowView:(UIView *)view
 {
-    [GJCFQuickUIUitil hiddenShowView:view withDuration:0.3];
+    [SWQuickUIUitil hiddenShowView:view withDuration:0.3];
 }
 
 + (void)defaultShowHiddenView:(UIView *)view
 {
-    [GJCFQuickUIUitil showHiddenView:view withDuration:0.3];
+    [SWQuickUIUitil showHiddenView:view withDuration:0.3];
 }
 
 + (void)defaultHiddenView:(UIView *)view
 {
-    [GJCFQuickUIUitil hiddenView:view withDuration:0.3];
+    [SWQuickUIUitil hiddenView:view withDuration:0.3];
 }
 
 + (void)defaultShowView:(UIView *)view
 {
-    [GJCFQuickUIUitil showView:view withDuration:0.3];
+    [SWQuickUIUitil showView:view withDuration:0.3];
 }
 
 + (void)hiddenView:(UIView *)view withDuration:(NSTimeInterval)duration
 {
-    [GJCFQuickUIUitil animationView:view fromAlpha:view.alpha toAlpha:0 withDuration:duration];
+    [SWQuickUIUitil animationView:view fromAlpha:view.alpha toAlpha:0 withDuration:duration];
 }
 
 + (void)showView:(UIView *)view withDuration:(NSTimeInterval)duration
 {
-    [GJCFQuickUIUitil animationView:view fromAlpha:view.alpha toAlpha:1 withDuration:duration];
+    [SWQuickUIUitil animationView:view fromAlpha:view.alpha toAlpha:1 withDuration:duration];
 }
 
 + (void)showView:(UIView *)view finalAlpha:(CGFloat)alpha withDuration:(NSTimeInterval)duration
 {
-    [GJCFQuickUIUitil animationView:view fromAlpha:view.alpha toAlpha:alpha withDuration:duration];
+    [SWQuickUIUitil animationView:view fromAlpha:view.alpha toAlpha:alpha withDuration:duration];
 }
 
 + (void)hiddenShowView:(UIView *)view withDuration:(NSTimeInterval)duration
 {
-    [GJCFQuickUIUitil animationView:view fromAlpha:0 toAlpha:1 withDuration:duration];
+    [SWQuickUIUitil animationView:view fromAlpha:0 toAlpha:1 withDuration:duration];
 }
 
 + (void)showHiddenView:(UIView *)view withDuration:(NSTimeInterval)duration
 {
-    [GJCFQuickUIUitil animationView:view fromAlpha:1 toAlpha:0 withDuration:duration];
+    [SWQuickUIUitil animationView:view fromAlpha:1 toAlpha:0 withDuration:duration];
 }
 
 + (void)animationView:(UIView *)view fromAlpha:(CGFloat)fAlpha toAlpha:(CGFloat)tAlpha withDuration:(NSTimeInterval)duration
 {
-    if (GJCFCheckObjectNull(view)) {
+    if (SWCheckObjectNull(view)) {
         return;
     }
     
     view.alpha = fAlpha;
     
-    GJCFAnimationWithDuration(duration, ^{
+    SWAnimationWithDuration(duration, ^{
         
         view.alpha = tAlpha;
         
@@ -756,7 +756,7 @@
 
 + (void)moveView:(UIView *)view newRect:(CGRect)rect withDuration:(NSTimeInterval)duration
 {
-    if (GJCFCheckObjectNull(view)) {
+    if (SWCheckObjectNull(view)) {
         return;
     }
     
@@ -764,7 +764,7 @@
         return;
     }
     
-    GJCFAnimationWithDuration(duration, ^{
+    SWAnimationWithDuration(duration, ^{
        
         view.frame = rect;
         
@@ -773,51 +773,51 @@
 
 + (void)moveViewX:(UIView *)view originXDetal:(CGFloat)moveX withDuration:(NSTimeInterval)duration
 {
-   [GJCFQuickUIUitil moveView:view originXDetal:moveX originYDetal:0.f widthDetal:0.f heightDetla:0.f withDuration:duration];
+   [SWQuickUIUitil moveView:view originXDetal:moveX originYDetal:0.f widthDetal:0.f heightDetla:0.f withDuration:duration];
 }
 
 + (void)moveViewY:(UIView *)view originYDetal:(CGFloat)moveY withDuration:(NSTimeInterval)duration
 {
-    [GJCFQuickUIUitil moveView:view originXDetal:0.f originYDetal:moveY widthDetal:0.f heightDetla:0.f withDuration:duration];
+    [SWQuickUIUitil moveView:view originXDetal:0.f originYDetal:moveY widthDetal:0.f heightDetla:0.f withDuration:duration];
 }
 
 + (void)moveViewWidth:(UIView *)view widthDetal:(CGFloat)moveWidth withDuration:(NSTimeInterval)duration
 {
-    [GJCFQuickUIUitil moveView:view originXDetal:0.f originYDetal:0.f widthDetal:moveWidth heightDetla:0.f withDuration:duration];
+    [SWQuickUIUitil moveView:view originXDetal:0.f originYDetal:0.f widthDetal:moveWidth heightDetla:0.f withDuration:duration];
 }
 
 + (void)moveViewHeight:(UIView *)view heightDetal:(CGFloat)moveHeight withDuration:(NSTimeInterval)duration
 {
-    [GJCFQuickUIUitil moveView:view originXDetal:0.f originYDetal:0.f widthDetal:0.f heightDetla:moveHeight withDuration:duration];
+    [SWQuickUIUitil moveView:view originXDetal:0.f originYDetal:0.f widthDetal:0.f heightDetla:moveHeight withDuration:duration];
 }
 
 + (void)moveViewToX:(UIView *)view toOriginX:(CGFloat)moveX withDuration:(NSTimeInterval)duration
 {
     CGFloat detal = moveX - view.frame.origin.x;
-    [GJCFQuickUIUitil moveViewX:view originXDetal:detal withDuration:duration];
+    [SWQuickUIUitil moveViewX:view originXDetal:detal withDuration:duration];
 }
 
 + (void)moveViewToY:(UIView *)view toOriginY:(CGFloat)moveY withDuration:(NSTimeInterval)duration
 {
     CGFloat detal = moveY - view.frame.origin.y;
-    [GJCFQuickUIUitil moveViewY:view originYDetal:detal withDuration:duration];
+    [SWQuickUIUitil moveViewY:view originYDetal:detal withDuration:duration];
 }
 
 + (void)moveViewToWidth:(UIView *)view toWidth:(CGFloat)moveWidth withDuration:(NSTimeInterval)duration
 {
     CGFloat detal = moveWidth - view.frame.size.width;
-    [GJCFQuickUIUitil moveViewWidth:view widthDetal:detal withDuration:duration];
+    [SWQuickUIUitil moveViewWidth:view widthDetal:detal withDuration:duration];
 }
 
 + (void)moveViewToHeight:(UIView *)view toHeight:(CGFloat)moveHeight withDuration:(NSTimeInterval)duration
 {
     CGFloat detal = moveHeight - view.frame.size.height;
-    [GJCFQuickUIUitil moveViewHeight:view heightDetal:detal withDuration:duration];
+    [SWQuickUIUitil moveViewHeight:view heightDetal:detal withDuration:duration];
 }
 
 + (void)moveViewCenter:(UIView *)view newCenter:(CGPoint)center withDuration:(NSTimeInterval)duration
 {
-    GJCFAnimationWithDuration(duration, ^{
+    SWAnimationWithDuration(duration, ^{
        
         view.center = center;
         
@@ -828,7 +828,7 @@
 {
     CGRect newFrame = view.frame;
     newFrame.size = size;
-    GJCFAnimationMoveViewRect(view, newFrame, duration);
+    SWAnimationMoveViewRect(view, newFrame, duration);
 }
 
 + (void)moveView:(UIView *)view originXDetal:(CGFloat)moveX originYDetal:(CGFloat)moveY widthDetal:(CGFloat)moveWidth heightDetla:(CGFloat)moveHeight withDuration:(NSTimeInterval)duration
@@ -839,144 +839,144 @@
     newFrame.size.width = newFrame.size.width + moveWidth;
     newFrame.size.height = newFrame.size.height + moveHeight;
     
-    [GJCFQuickUIUitil moveView:view newRect:newFrame withDuration:duration];
+    [SWQuickUIUitil moveView:view newRect:newFrame withDuration:duration];
 }
 
 + (void)flipViewFromLeft:(UIView *)view withDuration:(NSTimeInterval)duration action:(dispatch_block_t)block completionBlock:(GJCFQuickAnimationCompletionBlock)completion
 {
-    [GJCFQuickUIUitil flipView:view fromLeft:YES fromRight:NO fromTop:NO fromBottom:NO action:block withDuration:duration completionBlock:completion];
+    [SWQuickUIUitil flipView:view fromLeft:YES fromRight:NO fromTop:NO fromBottom:NO action:block withDuration:duration completionBlock:completion];
 }
 
 + (void)flipViewFromRight:(UIView *)view withDuration:(NSTimeInterval)duration action:(dispatch_block_t)block completionBlock:(GJCFQuickAnimationCompletionBlock)completion
 {
-    [GJCFQuickUIUitil flipView:view fromLeft:NO fromRight:YES fromTop:NO fromBottom:NO action:block withDuration:duration completionBlock:completion];
+    [SWQuickUIUitil flipView:view fromLeft:NO fromRight:YES fromTop:NO fromBottom:NO action:block withDuration:duration completionBlock:completion];
 }
 
 + (void)flipViewFromTop:(UIView *)view withDuration:(NSTimeInterval)duration action:(dispatch_block_t)block completionBlock:(GJCFQuickAnimationCompletionBlock)completion
 {
-    [GJCFQuickUIUitil flipView:view fromLeft:NO fromRight:NO fromTop:YES fromBottom:NO action:block withDuration:duration completionBlock:completion];
+    [SWQuickUIUitil flipView:view fromLeft:NO fromRight:NO fromTop:YES fromBottom:NO action:block withDuration:duration completionBlock:completion];
 }
 
 + (void)flipViewFromBottom:(UIView *)view withDuration:(NSTimeInterval)duration action:(dispatch_block_t)block completionBlock:(GJCFQuickAnimationCompletionBlock)completion
 {
-    [GJCFQuickUIUitil flipView:view fromLeft:NO fromRight:NO fromTop:NO fromBottom:YES action:block withDuration:duration completionBlock:completion];
+    [SWQuickUIUitil flipView:view fromLeft:NO fromRight:NO fromTop:NO fromBottom:YES action:block withDuration:duration completionBlock:completion];
 }
 
 + (void)flipView:(UIView *)view fromLeft:(BOOL)isLeft fromRight:(BOOL)isRight fromTop:(BOOL)isTop fromBottom:(BOOL)isBottom action:(dispatch_block_t)block withDuration:(NSTimeInterval)duration completionBlock:(GJCFQuickAnimationCompletionBlock)completion;
 {
-    if (GJCFCheckObjectNull(view)) {
+    if (SWCheckObjectNull(view)) {
         return;
     }
     if (isLeft) {
-        [GJCFQuickUIUitil animationView:view withDuration:duration action:block withOptions:UIViewAnimationOptionTransitionFlipFromLeft completionBlock:completion];
+        [SWQuickUIUitil animationView:view withDuration:duration action:block withOptions:UIViewAnimationOptionTransitionFlipFromLeft completionBlock:completion];
     }
     if (isRight) {
-        [GJCFQuickUIUitil animationView:view withDuration:duration action:block withOptions:UIViewAnimationOptionTransitionFlipFromRight completionBlock:completion];
+        [SWQuickUIUitil animationView:view withDuration:duration action:block withOptions:UIViewAnimationOptionTransitionFlipFromRight completionBlock:completion];
     }
     if (isTop) {
-        [GJCFQuickUIUitil animationView:view withDuration:duration action:block withOptions:UIViewAnimationOptionTransitionFlipFromTop completionBlock:completion];
+        [SWQuickUIUitil animationView:view withDuration:duration action:block withOptions:UIViewAnimationOptionTransitionFlipFromTop completionBlock:completion];
     }
     if (isBottom) {
-        [GJCFQuickUIUitil animationView:view withDuration:duration action:block withOptions:UIViewAnimationOptionTransitionFlipFromBottom completionBlock:completion];
+        [SWQuickUIUitil animationView:view withDuration:duration action:block withOptions:UIViewAnimationOptionTransitionFlipFromBottom completionBlock:completion];
     }
 }
 
 + (void)pageUpViewFromBottom:(UIView *)view withDuration:(NSTimeInterval)duration action:(dispatch_block_t)block completionBlock:(GJCFQuickAnimationCompletionBlock)completion
 {
-    [GJCFQuickUIUitil pageUpView:view fromLeft:NO fromRight:NO fromTop:NO fromBottom:YES action:block withDuration:duration completionBlock:completion];
+    [SWQuickUIUitil pageUpView:view fromLeft:NO fromRight:NO fromTop:NO fromBottom:YES action:block withDuration:duration completionBlock:completion];
 }
 
 + (void)pageUpView:(UIView *)view fromLeft:(BOOL)isLeft fromRight:(BOOL)isRight fromTop:(BOOL)isTop fromBottom:(BOOL)isBottom action:(dispatch_block_t)block withDuration:(NSTimeInterval)duration completionBlock:(GJCFQuickAnimationCompletionBlock)completion;
 {
-    if (GJCFCheckObjectNull(view)) {
+    if (SWCheckObjectNull(view)) {
         return;
     }
     if (isBottom) {
-        [GJCFQuickUIUitil animationView:view withDuration:duration action:block withOptions:UIViewAnimationOptionTransitionCurlUp|UIViewAnimationOptionCurveEaseInOut completionBlock:completion];
+        [SWQuickUIUitil animationView:view withDuration:duration action:block withOptions:UIViewAnimationOptionTransitionCurlUp|UIViewAnimationOptionCurveEaseInOut completionBlock:completion];
     }
 }
 
 + (void)pageDownViewFromTop:(UIView *)view withDuration:(NSTimeInterval)duration action:(dispatch_block_t)block completionBlock:(GJCFQuickAnimationCompletionBlock)completion
 {
-    [GJCFQuickUIUitil pageDownView:view fromLeft:NO fromRight:NO fromTop:YES fromBottom:NO action:block withDuration:duration completionBlock:completion];
+    [SWQuickUIUitil pageDownView:view fromLeft:NO fromRight:NO fromTop:YES fromBottom:NO action:block withDuration:duration completionBlock:completion];
 }
 
 + (void)pageDownView:(UIView *)view fromLeft:(BOOL)isLeft fromRight:(BOOL)isRight fromTop:(BOOL)isTop fromBottom:(BOOL)isBottom action:(dispatch_block_t)block withDuration:(NSTimeInterval)duration completionBlock:(GJCFQuickAnimationCompletionBlock)completion;
 {
-    if (GJCFCheckObjectNull(view)) {
+    if (SWCheckObjectNull(view)) {
         return;
     }
     if (isTop) {
-        [GJCFQuickUIUitil animationView:view withDuration:duration action:block withOptions:UIViewAnimationOptionTransitionCurlDown|UIViewAnimationOptionCurveEaseInOut completionBlock:completion];
+        [SWQuickUIUitil animationView:view withDuration:duration action:block withOptions:UIViewAnimationOptionTransitionCurlDown|UIViewAnimationOptionCurveEaseInOut completionBlock:completion];
     }
 }
 
 + (void)cubeView:(UIView *)view withDuration:(NSTimeInterval)duration action:(dispatch_block_t)block completionBlock:(GJCFQuickAnimationCompletionBlock)completion
 {
-    if (GJCFCheckObjectNull(view)) {
+    if (SWCheckObjectNull(view)) {
         return;
     }
-    [GJCFQuickUIUitil animationView:view withDuration:duration action:block withOptions:UIViewAnimationOptionTransitionCrossDissolve|UIViewAnimationOptionCurveEaseInOut completionBlock:completion];
+    [SWQuickUIUitil animationView:view withDuration:duration action:block withOptions:UIViewAnimationOptionTransitionCrossDissolve|UIViewAnimationOptionCurveEaseInOut completionBlock:completion];
 }
 
 
 + (void)rotationViewX:(UIView *)view withDegree:(CGFloat)degree withDuration:(NSTimeInterval)duration
 {
     NSString *path = @"transform.rotation.x";
-    [GJCFQuickUIUitil animationView:view withAnimationPath:path toValue:GJCFDegreeToRadiusValue(degree) withDuration:duration];
+    [SWQuickUIUitil animationView:view withAnimationPath:path toValue:SWDegreeToRadiusValue(degree) withDuration:duration];
 }
 
 + (void)rotationViewY:(UIView *)view withDegree:(CGFloat)degree withDuration:(NSTimeInterval)duration
 {
     NSString *path = @"transform.rotation.y";
-    [GJCFQuickUIUitil animationView:view withAnimationPath:path toValue:GJCFDegreeToRadiusValue(degree) withDuration:duration];
+    [SWQuickUIUitil animationView:view withAnimationPath:path toValue:SWDegreeToRadiusValue(degree) withDuration:duration];
 }
 
 + (void)rotationViewZ:(UIView *)view withDegree:(CGFloat)degree withDuration:(NSTimeInterval)duration
 {
     NSString *path = @"transform.rotation.z";
-    [GJCFQuickUIUitil animationView:view withAnimationPath:path toValue:GJCFDegreeToRadiusValue(degree) withDuration:duration];
+    [SWQuickUIUitil animationView:view withAnimationPath:path toValue:SWDegreeToRadiusValue(degree) withDuration:duration];
 }
 
 + (void)translationViewX:(UIView *)view withOriginX:(CGFloat)originX withDuration:(NSTimeInterval)duration
 {
     NSString *path = @"transform.translation.x";
-    [GJCFQuickUIUitil animationView:view withAnimationPath:path toValue:@(originX) withDuration:duration];
+    [SWQuickUIUitil animationView:view withAnimationPath:path toValue:@(originX) withDuration:duration];
 }
 
 + (void)translationViewY:(UIView *)view withOriginY:(CGFloat)originY withDuration:(NSTimeInterval)duration
 {
     NSString *path = @"transform.translation.y";
-    [GJCFQuickUIUitil animationView:view withAnimationPath:path toValue:@(originY) withDuration:duration];
+    [SWQuickUIUitil animationView:view withAnimationPath:path toValue:@(originY) withDuration:duration];
 }
 
 + (void)translationViewZ:(UIView *)view withOriginZ:(CGFloat)originZ withDuration:(NSTimeInterval)duration
 {
     NSString *path = @"transform.translation.z";
-    [GJCFQuickUIUitil animationView:view withAnimationPath:path toValue:@(originZ) withDuration:duration];
+    [SWQuickUIUitil animationView:view withAnimationPath:path toValue:@(originZ) withDuration:duration];
 }
 
 + (void)scaleViewX:(UIView *)view withScaleSize:(CGFloat)size withDuration:(NSTimeInterval)duration
 {
     NSString *path = @"transform.scale.x";
-    [GJCFQuickUIUitil animationView:view withAnimationPath:path toValue:@(size) withDuration:duration];
+    [SWQuickUIUitil animationView:view withAnimationPath:path toValue:@(size) withDuration:duration];
 }
 
 + (void)scaleViewY:(UIView *)view withScaleSize:(CGFloat)size withDuration:(NSTimeInterval)duration
 {
     NSString *path = @"transform.scale.y";
-    [GJCFQuickUIUitil animationView:view withAnimationPath:path toValue:@(size) withDuration:duration];
+    [SWQuickUIUitil animationView:view withAnimationPath:path toValue:@(size) withDuration:duration];
 }
 
 + (void)scaleViewZ:(UIView *)view withScaleSize:(CGFloat)size withDuration:(NSTimeInterval)duration
 {
     NSString *path = @"transform.scale.z";
-    [GJCFQuickUIUitil animationView:view withAnimationPath:path toValue:@(size) withDuration:duration];
+    [SWQuickUIUitil animationView:view withAnimationPath:path toValue:@(size) withDuration:duration];
 }
 
 + (void)animationView:(UIView *)view withAnimationPath:(NSString *)path toValue:(NSValue *)value withDuration:(NSTimeInterval)duration
 {
-    if (GJCFCheckObjectNull(view)) {
+    if (SWCheckObjectNull(view)) {
         return;
     }
     CABasicAnimation* basicAnimation = [CABasicAnimation animationWithKeyPath:path];
@@ -988,84 +988,84 @@
 
 + (void)view3DRotateX:(UIView *)view withDegree:(CGFloat)degree
 {
-    [GJCFQuickUIUitil view3DRotate:view x:1 y:0 z:0 withDegree:GJCFDegreeToRadius(degree)];
+    [SWQuickUIUitil view3DRotate:view x:1 y:0 z:0 withDegree:SWDegreeToRadius(degree)];
 }
 
 + (void)view3DRotateY:(UIView *)view withDegree:(CGFloat)degree
 {
-    [GJCFQuickUIUitil view3DRotate:view x:0 y:1 z:0 withDegree:GJCFDegreeToRadius(degree)];
+    [SWQuickUIUitil view3DRotate:view x:0 y:1 z:0 withDegree:SWDegreeToRadius(degree)];
 }
 
 + (void)view3DRotateZ:(UIView *)view withDegree:(CGFloat)degree
 {
-    [GJCFQuickUIUitil view3DRotate:view x:0 y:0 z:1 withDegree:GJCFDegreeToRadius(degree)];
+    [SWQuickUIUitil view3DRotate:view x:0 y:0 z:1 withDegree:SWDegreeToRadius(degree)];
 }
 
 + (void)view3DRotate:(UIView *)view x:(CGFloat)xState y:(CGFloat)yState z:(CGFloat)zState withDegree:(CGFloat)degree
 {
-    if (GJCFCheckObjectNull(view)) {
+    if (SWCheckObjectNull(view)) {
         return;
     }
-    GJCFAnimationWithDuration(0.35, ^{
+    SWAnimationWithDuration(0.35, ^{
         view.layer.transform = CATransform3DMakeRotation(degree, xState, yState, zState);
     });
 }
 
 + (void)view3DTranslateX:(UIView *)view withValue:(CGFloat)value
 {
-    [GJCFQuickUIUitil view3DTranslate:view x:value y:0 z:0];
+    [SWQuickUIUitil view3DTranslate:view x:value y:0 z:0];
 }
 
 + (void)view3DTranslateY:(UIView *)view withValue:(CGFloat)value
 {
-    [GJCFQuickUIUitil view3DTranslate:view x:0 y:value z:0];
+    [SWQuickUIUitil view3DTranslate:view x:0 y:value z:0];
 }
 
 + (void)view3DTranslateZ:(UIView *)view withValue:(CGFloat)value
 {
-    [GJCFQuickUIUitil view3DTranslate:view x:0 y:0 z:value];
+    [SWQuickUIUitil view3DTranslate:view x:0 y:0 z:value];
 }
 
 + (void)view3DTranslate:(UIView *)view x:(CGFloat)xState y:(CGFloat)yState z:(CGFloat)zState
 {
-    if (GJCFCheckObjectNull(view)) {
+    if (SWCheckObjectNull(view)) {
         return;
     }
-    GJCFAnimationWithDuration(0.35, ^{
+    SWAnimationWithDuration(0.35, ^{
         view.layer.transform = CATransform3DMakeTranslation(xState, yState, zState);
     });
 }
 
 + (void)view3DScaleX:(UIView *)view withValue:(CGFloat)value
 {
-    [GJCFQuickUIUitil view3DScale:view x:value y:0 z:0];
+    [SWQuickUIUitil view3DScale:view x:value y:0 z:0];
 }
 
 + (void)view3DScaleY:(UIView *)view withValue:(CGFloat)value
 {
-    [GJCFQuickUIUitil view3DScale:view x:0 y:value z:0];
+    [SWQuickUIUitil view3DScale:view x:0 y:value z:0];
 }
 
 + (void)view3DScaleZ:(UIView *)view withValue:(CGFloat)value
 {
-    [GJCFQuickUIUitil view3DScale:view x:0 y:0 z:value];
+    [SWQuickUIUitil view3DScale:view x:0 y:0 z:value];
 }
 
 + (void)view3DScale:(UIView *)view x:(CGFloat)xState y:(CGFloat)yState z:(CGFloat)zState
 {
-    if (GJCFCheckObjectNull(view)) {
+    if (SWCheckObjectNull(view)) {
         return;
     }
-    GJCFAnimationWithDuration(0.35, ^{
+    SWAnimationWithDuration(0.35, ^{
         view.layer.transform = CATransform3DMakeScale(xState, yState, zState);
     });
 }
 
-+ (GJCFQuickUIUitil *)shareQuickUIUitil
++ (SWQuickUIUitil *)shareQuickUIUitil
 {
-    static GJCFQuickUIUitil *_shareQuickUIInstance = nil;
+    static SWQuickUIUitil *_shareQuickUIInstance = nil;
     static dispatch_once_t onceToken;
-    GJCFDispatchOnce(onceToken, ^{
+    SWDispatchOnce(onceToken, ^{
        
         if (!_shareQuickUIInstance) {
             _shareQuickUIInstance = [[self alloc]init];
@@ -1096,7 +1096,7 @@
         
         if (progress <= duration) {
             
-            GJCFAsyncMainQueue(action);
+            SWAsyncMainQueue(action);
 
             progress = progress + timer.timeInterval;
             
@@ -1115,7 +1115,7 @@
 
 - (void)removeBlockInfo:(NSString *)blockIdentifier
 {
-    if (GJCFStringIsNull(blockIdentifier)) {
+    if (SWStringIsNull(blockIdentifier)) {
         return;
     }
     if (self.repeatActionInfoDict.count == 0) {
@@ -1151,28 +1151,28 @@
 
 + (NSString *)repeatDoAction:(dispatch_block_t)block
 {
-  return  [GJCFQuickUIUitil repeatDoAction:block withDelay:0.f];
+  return  [SWQuickUIUitil repeatDoAction:block withDelay:0.f];
 }
 
 + (NSString *)repeatDoAction:(dispatch_block_t)block withDelay:(NSTimeInterval)delaySecond
 {
-    return [GJCFQuickUIUitil repeatDoAction:block withDelay:delaySecond withRepeatDuration:0];
+    return [SWQuickUIUitil repeatDoAction:block withDelay:delaySecond withRepeatDuration:0];
 }
 
 + (NSString *)repeatDoAction:(dispatch_block_t)block withRepeatDuration:(NSTimeInterval)duration
 {
-    return [GJCFQuickUIUitil repeatDoAction:block withDelay:0 withRepeatDuration:duration];
+    return [SWQuickUIUitil repeatDoAction:block withDelay:0 withRepeatDuration:duration];
 }
 
 + (NSString *)repeatDoAction:(dispatch_block_t)block withDelay:(NSTimeInterval)delaySecond withRepeatDuration:(NSTimeInterval)duration
 {
-    if (GJCFCheckObjectNull(block)) {
+    if (SWCheckObjectNull(block)) {
         return nil;
     }
     
-    NSString *blockIdentifier = GJCFStringCurrentTimeStamp;
+    NSString *blockIdentifier = SWStringCurrentTimeStamp;
     
-    GJCFAsyncMainQueueDelay(delaySecond, ^{
+    SWAsyncMainQueueDelay(delaySecond, ^{
         
         NSMutableDictionary *blockActionInfo = [NSMutableDictionary dictionary];
         [blockActionInfo setObject:block forKey:@"action"];
@@ -1180,8 +1180,8 @@
         [blockActionInfo setObject:@(0) forKey:@"progress"];
         [blockActionInfo setObject:@(duration) forKey:@"repeatDuration"];
         
-        [[GJCFQuickUIUitil shareQuickUIUitil]addRepeatBlockInfo:blockActionInfo];
-        [[GJCFQuickUIUitil shareQuickUIUitil]startRepeatAction];
+        [[SWQuickUIUitil shareQuickUIUitil]addRepeatBlockInfo:blockActionInfo];
+        [[SWQuickUIUitil shareQuickUIUitil]startRepeatAction];
         
     });
     
@@ -1190,80 +1190,80 @@
 
 + (void)stopRepeatAction:(NSString *)blockIdentifier
 {
-    if (GJCFStringIsNull(blockIdentifier)) {
+    if (SWStringIsNull(blockIdentifier)) {
         return;
     }
-    [[GJCFQuickUIUitil shareQuickUIUitil]removeBlockInfo:blockIdentifier];
+    [[SWQuickUIUitil shareQuickUIUitil]removeBlockInfo:blockIdentifier];
 }
 
 + (void)animationViewXCycle:(UIView *)view withXMoveDetal:(CGFloat)moveX withDuration:(NSTimeInterval)duration
 {
-    GJCFAnimationViewTranslationX(view, moveX, duration);
-    GJCFAnimationViewTranslationX(view, 0, duration);
-    GJCFAnimationViewTranslationX(view, -moveX, duration);
-    GJCFAnimationViewTranslationX(view, 0, duration);
+    SWAnimationViewTranslationX(view, moveX, duration);
+    SWAnimationViewTranslationX(view, 0, duration);
+    SWAnimationViewTranslationX(view, -moveX, duration);
+    SWAnimationViewTranslationX(view, 0, duration);
 }
 
 + (void)animationViewYCycle:(UIView *)view withYMoveDetal:(CGFloat)moveY withDuration:(NSTimeInterval)duration
 {
-    GJCFAnimationViewTranslationY(view, moveY, duration);
-    GJCFAnimationViewTranslationY(view, 0, duration);
-    GJCFAnimationViewTranslationY(view, -moveY, duration);
-    GJCFAnimationViewTranslationY(view, 0, duration);
+    SWAnimationViewTranslationY(view, moveY, duration);
+    SWAnimationViewTranslationY(view, 0, duration);
+    SWAnimationViewTranslationY(view, -moveY, duration);
+    SWAnimationViewTranslationY(view, 0, duration);
 }
 
 + (void)animationViewZCycle:(UIView *)view withZMoveDetal:(CGFloat)moveZ withDuration:(NSTimeInterval)duration
 {
-    GJCFAnimationViewTranslationZ(view, moveZ, duration);
-    GJCFAnimationViewTranslationZ(view, 0, duration);
-    GJCFAnimationViewTranslationZ(view, -moveZ, duration);
-    GJCFAnimationViewTranslationZ(view, 0, duration);
+    SWAnimationViewTranslationZ(view, moveZ, duration);
+    SWAnimationViewTranslationZ(view, 0, duration);
+    SWAnimationViewTranslationZ(view, -moveZ, duration);
+    SWAnimationViewTranslationZ(view, 0, duration);
 }
 
 + (void)animationViewRotateXCycle:(UIView *)view withXRotateDetal:(CGFloat)xDegree withDuration:(NSTimeInterval)duration
 {
-    GJCFAnimationViewRotateX(view, xDegree, duration);
-    GJCFAnimationViewRotateX(view, 0, duration);
-    GJCFAnimationViewRotateX(view, -xDegree, duration);
-    GJCFAnimationViewRotateX(view, 0, duration);
+    SWAnimationViewRotateX(view, xDegree, duration);
+    SWAnimationViewRotateX(view, 0, duration);
+    SWAnimationViewRotateX(view, -xDegree, duration);
+    SWAnimationViewRotateX(view, 0, duration);
 }
 
 + (void)animationViewRotateYCycle:(UIView *)view withYRotateDetal:(CGFloat)yDegree withDuration:(NSTimeInterval)duration
 {
-    GJCFAnimationViewRotateY(view, yDegree, duration);
-    GJCFAnimationViewRotateY(view, 0, duration);
-    GJCFAnimationViewRotateY(view, -yDegree, duration);
-    GJCFAnimationViewRotateY(view, 0, duration);
+    SWAnimationViewRotateY(view, yDegree, duration);
+    SWAnimationViewRotateY(view, 0, duration);
+    SWAnimationViewRotateY(view, -yDegree, duration);
+    SWAnimationViewRotateY(view, 0, duration);
 }
 
 + (void)animationViewRotateZCycle:(UIView *)view withZRotateDetal:(CGFloat)zDegree withDuration:(NSTimeInterval)duration
 {
-    GJCFAnimationViewRotateZ(view, zDegree, duration);
-    GJCFAnimationViewRotateZ(view, 0, duration);
-    GJCFAnimationViewRotateZ(view, -zDegree, duration);
-    GJCFAnimationViewRotateZ(view, 0, duration);
+    SWAnimationViewRotateZ(view, zDegree, duration);
+    SWAnimationViewRotateZ(view, 0, duration);
+    SWAnimationViewRotateZ(view, -zDegree, duration);
+    SWAnimationViewRotateZ(view, 0, duration);
 }
 
 /* CAAnimation */
 
 + (void)animationLayer:(CALayer *)aLayer positionXWithFromValue:(NSValue *)fromValue withToValue:(NSValue *)toValue withRepeatCount:(NSInteger)repeatCount withDuration:(NSTimeInterval)duration
 {
-    return [GJCFQuickUIUitil animationLayer:aLayer path:@"position.x" withFromValue:fromValue withToValue:toValue withRepeatCount:repeatCount withDuration:duration];
+    return [SWQuickUIUitil animationLayer:aLayer path:@"position.x" withFromValue:fromValue withToValue:toValue withRepeatCount:repeatCount withDuration:duration];
 }
 
 + (void)animationLayer:(CALayer *)aLayer positionYWithFromValue:(NSValue *)fromValue withToValue:(NSValue *)toValue withRepeatCount:(NSInteger)repeatCount withDuration:(NSTimeInterval)duration
 {
-    return [GJCFQuickUIUitil animationLayer:aLayer path:@"position.y" withFromValue:fromValue withToValue:toValue withRepeatCount:repeatCount withDuration:duration];
+    return [SWQuickUIUitil animationLayer:aLayer path:@"position.y" withFromValue:fromValue withToValue:toValue withRepeatCount:repeatCount withDuration:duration];
 }
 
 + (void)animationLayer:(CALayer *)aLayer positionCenterWithFromValue:(NSValue *)fromValue withToValue:(NSValue *)toValue withRepeatCount:(NSInteger)repeatCount withDuration:(NSTimeInterval)duration
 {
-    return [GJCFQuickUIUitil animationLayer:aLayer path:@"position" withFromValue:fromValue withToValue:toValue withRepeatCount:repeatCount withDuration:duration];
+    return [SWQuickUIUitil animationLayer:aLayer path:@"position" withFromValue:fromValue withToValue:toValue withRepeatCount:repeatCount withDuration:duration];
 }
 
 + (void)animationLayer:(CALayer *)aLayer path:(NSString *)path withFromValue:(NSValue *)fromValue withToValue:(NSValue *)toValue withRepeatCount:(NSInteger)repeatCount withDuration:(NSTimeInterval)duration
 {
-    if (GJCFCheckObjectNull(aLayer) || GJCFStringIsNull(path) || GJCFCheckKeyValueHasNull(fromValue, toValue)) {
+    if (SWCheckObjectNull(aLayer) || SWStringIsNull(path) || SWCheckKeyValueHasNull(fromValue, toValue)) {
         return;
     }
     
@@ -1281,22 +1281,22 @@
 
 + (void)animationLayer:(CALayer *)aLayer positionXByValue:(NSValue *)value withRepeatCount:(NSInteger)repeatCount withDuration:(NSTimeInterval)duration
 {
-    return [GJCFQuickUIUitil animationLayer:aLayer path:@"position.x" ByValue:value withRepeatCount:repeatCount withDuration:duration];
+    return [SWQuickUIUitil animationLayer:aLayer path:@"position.x" ByValue:value withRepeatCount:repeatCount withDuration:duration];
 }
 
 + (void)animationLayer:(CALayer *)aLayer positionYByValue:(NSValue *)value  withRepeatCount:(NSInteger)repeatCount  withDuration:(NSTimeInterval)duration
 {
-    return [GJCFQuickUIUitil animationLayer:aLayer path:@"position.y" ByValue:value withRepeatCount:repeatCount withDuration:duration];
+    return [SWQuickUIUitil animationLayer:aLayer path:@"position.y" ByValue:value withRepeatCount:repeatCount withDuration:duration];
 }
 
 + (void)animationLayer:(CALayer *)aLayer positionCenterByValue:(NSValue *)value  withRepeatCount:(NSInteger)repeatCount  withDuration:(NSTimeInterval)duration
 {
-    return [GJCFQuickUIUitil animationLayer:aLayer path:@"position" ByValue:value withRepeatCount:repeatCount withDuration:duration];
+    return [SWQuickUIUitil animationLayer:aLayer path:@"position" ByValue:value withRepeatCount:repeatCount withDuration:duration];
 }
 
 + (void)animationLayer:(CALayer *)aLayer path:(NSString *)path ByValue:(NSValue *)value  withRepeatCount:(NSInteger)repeatCount  withDuration:(NSTimeInterval)duration
 {
-    if (GJCFCheckObjectNull(aLayer) || GJCFStringIsNull(path) || GJCFCheckObjectNull(value)) {
+    if (SWCheckObjectNull(aLayer) || SWStringIsNull(path) || SWCheckObjectNull(value)) {
         return;
     }
     
@@ -1325,7 +1325,7 @@
 
 // Returns a copy of the given image, adding an alpha channel if it doesn't already have one
 + (UIImage *)imageWithAlpha:(UIImage *)aImage {
-    if ([GJCFQuickUIUitil hasAlpha:aImage]) {
+    if ([SWQuickUIUitil hasAlpha:aImage]) {
         return aImage;
     }
     
@@ -1360,7 +1360,7 @@
 // Original author: Björn Sållarp. Used with permission. See: http://blog.sallarp.com/iphone-uiimage-round-corners/
 + (UIImage *)roundedCornerImage:(UIImage *)aImage cornerSize:(NSInteger)cornerSize borderSize:(NSInteger)borderSize {
     // If the image does not have an alpha layer, add one
-    UIImage *image = [GJCFQuickUIUitil imageWithAlpha:aImage];
+    UIImage *image = [SWQuickUIUitil imageWithAlpha:aImage];
     
     CGFloat scale = MAX(aImage.scale,1.0f);
     NSUInteger scaledBorderSize = borderSize * scale;
@@ -1377,7 +1377,7 @@
     // Create a clipping path with rounded corners
     
     CGContextBeginPath(context);
-    [GJCFQuickUIUitil addRoundedRectToPath:CGRectMake(scaledBorderSize, scaledBorderSize, image.size.width*scale - borderSize * 2, image.size.height*scale - borderSize * 2)
+    [SWQuickUIUitil addRoundedRectToPath:CGRectMake(scaledBorderSize, scaledBorderSize, image.size.width*scale - borderSize * 2, image.size.height*scale - borderSize * 2)
                        context:context
                      ovalWidth:cornerSize*scale
                     ovalHeight:cornerSize*scale];
@@ -1428,7 +1428,7 @@
     if (!aImage) {
         return nil;
     }
-    return [GJCFQuickUIUitil roundedCornerImage:aImage cornerSize:cornerSize borderSize:boardSize];
+    return [SWQuickUIUitil roundedCornerImage:aImage cornerSize:cornerSize borderSize:boardSize];
 }
 
 @end

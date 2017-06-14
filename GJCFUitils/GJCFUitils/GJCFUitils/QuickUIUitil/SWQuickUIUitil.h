@@ -12,7 +12,7 @@
 
 typedef void (^GJCFQuickAnimationCompletionBlock) (BOOL finished);
 
-@interface GJCFQuickUIUitil : NSObject
+@interface SWQuickUIUitil : NSObject
 
 + (UIColor *)colorFromRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue;
 

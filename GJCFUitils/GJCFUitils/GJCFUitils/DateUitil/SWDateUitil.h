@@ -27,7 +27,7 @@ static NSString *kNSDateHelperFormatSQLDate             = @"yyyy-MM-dd";
 static NSString *kNSDateHelperFormatSQLTime             = @"HH:mm:ss";
 static NSString *kNSDateHelperFormatSQLDateWithTime     = @"yyyy-MM-dd HH:mm:ss";
 
-@interface GJCFDateUitil : NSObject
+@interface SWDateUitil : NSObject
 
 + (NSCalendar *)sharedCalendar;
 
@@ -52,6 +52,9 @@ static NSString *kNSDateHelperFormatSQLDateWithTime     = @"yyyy-MM-dd HH:mm:ss"
 + (NSString *)weekNumberString:(NSDate *)date;
 
 + (NSUInteger)weekNumber:(NSDate *)date;
+
+/// 某天属于一年第几周,  周一为一周起始,  时间(时区)以系统时间为准
++ (NSInteger)weekNumberMondayFirst:(NSDate *)date;
 
 + (NSUInteger)hour:(NSDate *)date;
 

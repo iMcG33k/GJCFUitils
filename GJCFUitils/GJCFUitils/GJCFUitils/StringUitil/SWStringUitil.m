@@ -6,12 +6,12 @@
 //  Copyright (c) 2014年 ZYProSoft. All rights reserved.
 //
 
-#import "GJCFStringUitil.h"
-#import "GJCFStringMacrocDefine.h"
-#import "GJCFUitils.h"
+#import "SWStringUitil.h"
+#import "SWStringMacrocDefine.h"
+#import "SWUitils.h"
 #import <CommonCrypto/CommonDigest.h>
 
-@implementation GJCFStringUitil
+@implementation SWStringUitil
 
 + (BOOL)stringIsNull:(NSString *)string
 {
@@ -28,7 +28,7 @@
 
 + (BOOL)stringIsAllWhiteSpace:(NSString *)string
 {
-    if (GJCFStringIsNull(string)) {
+    if (SWStringIsNull(string)) {
         return YES;
     }else{
         
@@ -44,7 +44,7 @@
 
 + (BOOL)stringToBool:(NSString*)sourceString
 {
-    if (GJCFStringIsNull(sourceString)) {
+    if (SWStringIsNull(sourceString)) {
         return NO;
     }else{
         return [sourceString boolValue];
@@ -53,7 +53,7 @@
 
 + (NSInteger)stringToInt:(NSString*)sourceString
 {
-    if (GJCFStringIsNull(sourceString)) {
+    if (SWStringIsNull(sourceString)) {
         return NSIntegerMax;
     }else{
         return [sourceString intValue];
@@ -62,7 +62,7 @@
 
 + (CGFloat)stringToFloat:(NSString*)sourceString
 {
-    if (GJCFStringIsNull(sourceString)) {
+    if (SWStringIsNull(sourceString)) {
         return CGFLOAT_MAX;
     }else{
         return [sourceString floatValue];
@@ -71,7 +71,7 @@
 
 + (double)stringToDouble:(NSString*)sourceString
 {
-    if (GJCFStringIsNull(sourceString)) {
+    if (SWStringIsNull(sourceString)) {
         return CGFLOAT_MAX;
     }else{
         return [sourceString doubleValue];
@@ -100,7 +100,7 @@
 
 + (NSString*)stringFromFile:(NSString*)path
 {
-    if (GJCFStringIsNull(path)) {
+    if (SWStringIsNull(path)) {
         return nil;
     }
     return [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
@@ -108,7 +108,7 @@
 
 + (BOOL)sourceString:(NSString*)sourceString regexMatch:(NSString *)regexString
 {
-    if (GJCFStringIsNull(sourceString) || GJCFStringIsNull(regexString) ) {
+    if (SWStringIsNull(sourceString) || SWStringIsNull(regexString) ) {
         return NO;
     }
     
@@ -119,68 +119,68 @@
 + (BOOL)stringIsValidateEmailAddress:(NSString *)string
 {
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    return [GJCFStringUitil sourceString:string regexMatch:emailRegex];
+    return [SWStringUitil sourceString:string regexMatch:emailRegex];
 }
 
 + (BOOL)stringISValidateMobilePhone:(NSString *)string
 {
     //手机号以13， 15，18开头，八个 \d 数字字符
     NSString *phoneRegex = @"^((13[0-9])|(15[^4,\\D])|(18[0,0-9]))\\d{8}$";
-    return [GJCFStringUitil sourceString:string regexMatch:phoneRegex];
+    return [SWStringUitil sourceString:string regexMatch:phoneRegex];
 }
 
 + (BOOL)stringISValidateCarNumber:(NSString *)string
 {
     NSString *carRegex = @"^[\u4e00-\u9fa5]{1}[a-zA-Z]{1}[a-zA-Z_0-9]{4}[a-zA-Z_0-9_\u4e00-\u9fa5]$";
-    return [GJCFStringUitil sourceString:string regexMatch:carRegex];
+    return [SWStringUitil sourceString:string regexMatch:carRegex];
 }
 
 + (BOOL)stringIsValidateUrl:(NSString *)string
 {
     NSString *checkRegex = @"^(([hH][tT]{2}[pP][sS]?)|([fF][tT][pP]))\\:\\/\\/[wW]{3}\\.[\\w-]+\\.\\w{2,4}(\\/.*)?$";
-    return [GJCFStringUitil sourceString:string regexMatch:checkRegex];
+    return [SWStringUitil sourceString:string regexMatch:checkRegex];
 }
 
 + (BOOL)stringIsAllChineseWord:(NSString *)string
 {
     NSString *checkRegex = @"^[\u4e00-\u9fa5]+$";
-    return [GJCFStringUitil sourceString:string regexMatch:checkRegex];
+    return [SWStringUitil sourceString:string regexMatch:checkRegex];
 }
 
 + (BOOL)stringISValidatePersonCardNumber:(NSString *)string
 {
     NSString *regex2 = @"^(\\d{14}|\\d{17})(\\d|[xX])$";
-    return [GJCFStringUitil sourceString:string regexMatch:regex2];
+    return [SWStringUitil sourceString:string regexMatch:regex2];
 }
 
 + (BOOL)stringIsValidatePhone:(NSString *)string
 {
     NSString *phoneRegex = @"^(^0\\d{2}-?\\d{8}$)|(^0\\d{3}-?\\d{7}$)|(^\\(0\\d{2}\\)-?\\d{8}$)|(^\\(0\\d{3}\\)-?\\d{7}$)$";
-    return [GJCFStringUitil sourceString:string regexMatch:phoneRegex];
+    return [SWStringUitil sourceString:string regexMatch:phoneRegex];
 }
 
 + (BOOL)stringIsValidateMailCode:(NSString *)string
 {
     NSString *mailCodeRegex = @"^\\d{6}$";
-    return [GJCFStringUitil sourceString:string regexMatch:mailCodeRegex];
+    return [SWStringUitil sourceString:string regexMatch:mailCodeRegex];
 }
 
 + (BOOL)stringJustHasNumberAndCharacter:(NSString *)string
 {
     NSString *checkRegex = @"[a-z][A-Z][0-9]";
-    return [GJCFStringUitil sourceString:string regexMatch:checkRegex];
+    return [SWStringUitil sourceString:string regexMatch:checkRegex];
 }
 
 + (BOOL)stringChineseNumberCharacterOnly:(NSString *)string
 {
     NSString *checkRegex = @"[a-zA-Z\u4e00-\u9fa5][a-zA-Z0-9\u4e00-\u9fa5]+";
-    return [GJCFStringUitil sourceString:string regexMatch:checkRegex];
+    return [SWStringUitil sourceString:string regexMatch:checkRegex];
 }
 
 + (BOOL)stringJustHasNumber:(NSString *)string
 {
     NSString *checkRegex = @"^[0-9]*$";
-    return [GJCFStringUitil sourceString:string regexMatch:checkRegex];
+    return [SWStringUitil sourceString:string regexMatch:checkRegex];
 }
 
 + (NSString*)currentTimeStampString
@@ -197,7 +197,7 @@
 
 + (NSString *)unarchieveFromPath:(NSString *)filePath
 {
-    return GJCFUnArchieveObject(filePath);
+    return SWUnArchieveObject(filePath);
 }
 
 + (NSString *)MD5:(NSString *)string
@@ -232,7 +232,7 @@
 // 转化为UTF8编码
 + (NSString *)urlEncode:(id)object {
     
-    if (GJCFCheckObjectNull(object)) {
+    if (SWCheckObjectNull(object)) {
         return nil;
     }
     
@@ -247,7 +247,7 @@
 
 + (NSString *)encodeStringFromDict:(NSDictionary *)dict
 {
-    if (GJCFCheckObjectNull(dict)) {
+    if (SWCheckObjectNull(dict)) {
         return nil;
     }
     
@@ -255,7 +255,7 @@
     for (id key in dict) {
         @autoreleasepool {
             id value = [dict objectForKey: key];
-            NSString *part = [NSString stringWithFormat: @"%@=%@",[GJCFStringUitil urlEncode:key],[GJCFStringUitil urlEncode:value]];
+            NSString *part = [NSString stringWithFormat: @"%@=%@",[SWStringUitil urlEncode:key],[SWStringUitil urlEncode:value]];
             [parts addObject: part];
         }
     }
@@ -264,7 +264,7 @@
 
 + (NSRange)stringRange:(NSString *)string
 {
-    if (GJCFStringIsNull(string)) {
+    if (SWStringIsNull(string)) {
         return NSMakeRange(NSNotFound, 0);
     }
     return NSMakeRange(0, string.length);

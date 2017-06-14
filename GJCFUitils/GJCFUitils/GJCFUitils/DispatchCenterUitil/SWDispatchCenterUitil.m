@@ -6,58 +6,58 @@
 //  Copyright (c) 2014年 ZYProSoft. All rights reserved.
 //
 
-#import "GJCFDispatchCenterUitil.h"
+#import "SWDispatchCenterUitil.h"
 
-@implementation GJCFDispatchCenterUitil
+@implementation SWDispatchCenterUitil
 
 + (void)asyncMainQueue:(dispatch_block_t)block
 {
-    [GJCFDispatchCenterUitil asyncMainQueue:block delay:0.f];
+    [SWDispatchCenterUitil asyncMainQueue:block delay:0.f];
 }
 
 + (void)asyncMainQueue:(dispatch_block_t)block delay:(NSTimeInterval)second
 {
-    [GJCFDispatchCenterUitil asyncQueue:dispatch_get_main_queue() action:block delay:second];
+    [SWDispatchCenterUitil asyncQueue:dispatch_get_main_queue() action:block delay:second];
 }
 
 + (void)asyncGlobalBackgroundQueue:(dispatch_block_t)block
 {
-    [GJCFDispatchCenterUitil asyncGlobalBackgroundQueue:block delay:0.f];
+    [SWDispatchCenterUitil asyncGlobalBackgroundQueue:block delay:0.f];
 }
 
 + (void)asyncGlobalBackgroundQueue:(dispatch_block_t)block delay:(NSTimeInterval)second
 {
-    [GJCFDispatchCenterUitil asyncQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0) action:block delay:second];
+    [SWDispatchCenterUitil asyncQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0) action:block delay:second];
 }
 
 + (void)asyncGlobalHighQueue:(dispatch_block_t)block
 {
-    [GJCFDispatchCenterUitil asyncGlobalHighQueue:block delay:0.f];
+    [SWDispatchCenterUitil asyncGlobalHighQueue:block delay:0.f];
 }
 
 + (void)asyncGlobalHighQueue:(dispatch_block_t)block delay:(NSTimeInterval)second
 {
-    [GJCFDispatchCenterUitil asyncQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0) action:block delay:second];
+    [SWDispatchCenterUitil asyncQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0) action:block delay:second];
 }
 
 + (void)asyncGlobalLowQueue:(dispatch_block_t)block
 {
-    [GJCFDispatchCenterUitil asyncGlobalLowQueue:block delay:0.f];
+    [SWDispatchCenterUitil asyncGlobalLowQueue:block delay:0.f];
 }
 
 + (void)asyncGlobalLowQueue:(dispatch_block_t)block delay:(NSTimeInterval)second
 {
-     [GJCFDispatchCenterUitil asyncQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0) action:block delay:second];
+     [SWDispatchCenterUitil asyncQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0) action:block delay:second];
 }
 
 + (void)asyncGlobalDefaultQueue:(dispatch_block_t)block
 {
-    [GJCFDispatchCenterUitil asyncGlobalDefaultQueue:block delay:0.f];
+    [SWDispatchCenterUitil asyncGlobalDefaultQueue:block delay:0.f];
 }
 
 + (void)asyncGlobalDefaultQueue:(dispatch_block_t)block delay:(NSTimeInterval)second
 {
-    [GJCFDispatchCenterUitil asyncQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) action:block delay:second];
+    [SWDispatchCenterUitil asyncQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) action:block delay:second];
 }
 
 + (void)asyncQueue:(dispatch_queue_t)queue action:(dispatch_block_t)block delay:(NSTimeInterval)second

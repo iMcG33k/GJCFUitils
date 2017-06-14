@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 #import <CoreGraphics/CoreGraphics.h>
-@interface GJCFSystemUitil : NSObject
+@interface SWSystemUitil : NSObject
 
 + (CGFloat)appVersion;
 

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
-@interface GJCFStringUitil : NSObject
+@interface SWStringUitil : NSObject
 
 + (BOOL)stringIsNull:(NSString *)string;
 

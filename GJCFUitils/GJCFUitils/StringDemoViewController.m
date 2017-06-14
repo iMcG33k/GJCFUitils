@@ -7,7 +7,7 @@
 //
 
 #import "StringDemoViewController.h"
-#import "GJCFUitils.h"
+#import "SWUitils.h"
 
 @interface StringDemoViewController ()
 
@@ -23,13 +23,13 @@
     
     [self addDebugMessage:souceString];
     
-    [self addDebugMessage:[NSString stringWithFormat:@"是否全部中文字符 %d",GJCFStringChineseOnly(souceString)]];
+    [self addDebugMessage:[NSString stringWithFormat:@"是否全部中文字符 %d",SWStringChineseOnly(souceString)]];
     
     NSString *numString = @"23456";
     
     [self addDebugMessage:numString];
     
-    NSString *numStringCheck = [NSString stringWithFormat:@"%@ 是否全是数字: %d",numString,GJCFStringNumOnly(numString)];
+    NSString *numStringCheck = [NSString stringWithFormat:@"%@ 是否全是数字: %d",numString,SWStringNumOnly(numString)];
     
     [self addDebugMessage:numStringCheck];
 }

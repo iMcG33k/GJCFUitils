@@ -6,14 +6,14 @@
 //  Copyright (c) 2014年 ZYProSoft. All rights reserved.
 //
 
-#import "GJCFSystemUitil.h"
-#import "GJCFStringMacrocDefine.h"
-#import "GJCFSystemMacrocDefine.h"
-#import "GJCFUitils.h"
+#import "SWSystemUitil.h"
+#import "SWStringMacrocDefine.h"
+#import "SWSystemMacrocDefine.h"
+#import "SWUitils.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 
-@implementation GJCFSystemUitil
+@implementation SWSystemUitil
 
 + (CGFloat)appVersion
 {
@@ -41,7 +41,7 @@
 
 + (BOOL)isSystemVersionOver:(CGFloat)versionValue
 {
-    return [GJCFSystemUitil currentSystemVersion] >= versionValue;
+    return [SWSystemUitil currentSystemVersion] >= versionValue;
 }
 
 + (CGRect)screenBounds
@@ -66,23 +66,23 @@
 
 + (BOOL)iPhone4Device
 {
-    return CGSizeEqualToSize((CGSize){320,480}, [GJCFSystemUitil deviceScreenSize]);
+    return CGSizeEqualToSize((CGSize){320,480}, [SWSystemUitil deviceScreenSize]);
 }
 
 + (BOOL)iPhone5Device
 {
-    return CGSizeEqualToSize((CGSize){320,568}, [GJCFSystemUitil deviceScreenSize]);
+    return CGSizeEqualToSize((CGSize){320,568}, [SWSystemUitil deviceScreenSize]);
 
 }
 
 + (BOOL)iPhone6Device
 {
-    return CGSizeEqualToSize((CGSize){375,667}, [GJCFSystemUitil deviceScreenSize]);
+    return CGSizeEqualToSize((CGSize){375,667}, [SWSystemUitil deviceScreenSize]);
 }
 
 + (BOOL)iPhone6PlusDevice
 {
-    return CGSizeEqualToSize((CGSize){414,736}, [GJCFSystemUitil deviceScreenSize]);
+    return CGSizeEqualToSize((CGSize){414,736}, [SWSystemUitil deviceScreenSize]);
 }
 
 + (CGSize)deviceScreenSize
@@ -102,37 +102,37 @@
 
 + (void)postNoti:(NSString *)notiName
 {
-    [GJCFSystemUitil postNoti:notiName withObject:nil];
+    [SWSystemUitil postNoti:notiName withObject:nil];
 }
 
 + (void)postNoti:(NSString *)notiName withObject:(id)obj
 {
-    [GJCFSystemUitil postNoti:notiName withObject:obj withUserInfo:nil];
+    [SWSystemUitil postNoti:notiName withObject:obj withUserInfo:nil];
 }
 
 + (void)postNoti:(NSString *)notiName withObject:(id)obj withUserInfo:(NSDictionary *)infoDict
 {
-    if (GJCFStringIsNull(notiName)) {
+    if (SWStringIsNull(notiName)) {
         return;
     }
-    [[GJCFSystemUitil defaultCenter]postNotificationName:notiName object:obj userInfo:infoDict];
+    [[SWSystemUitil defaultCenter]postNotificationName:notiName object:obj userInfo:infoDict];
 }
 
 + (NSString *)mainBundlePath:(NSString*)fileName
 {
-    if (GJCFStringIsNull(fileName)) {
+    if (SWStringIsNull(fileName)) {
         return nil;
     }
     NSArray *fileArray = [fileName componentsSeparatedByString:@"."];
     if (fileArray.count < 2) {
         return nil;
     }
-    return [GJCFMainBundle  pathForResource:fileArray[0] ofType:fileArray[1]];
+    return [SWMainBundle  pathForResource:fileArray[0] ofType:fileArray[1]];
 }
 
 + (NSString *)bundle:(NSString *)bundle file:(NSString *)file
 {
-    if (GJCFStringIsNull(bundle)||GJCFStringIsNull(file)) {
+    if (SWStringIsNull(bundle)||SWStringIsNull(file)) {
         return nil;
     }
     return [bundle stringByAppendingPathComponent:file];
@@ -145,7 +145,7 @@
 
 + (void)originObject:(id)originObject associateObject:(id)anObject byKey:(NSString *const)associateKey
 {
-    if (GJCFCheckObjectNull(originObject) || GJCFCheckObjectNull(anObject)) {
+    if (SWCheckObjectNull(originObject) || SWCheckObjectNull(anObject)) {
         return;
     }
     
@@ -154,7 +154,7 @@
 
 + (id)associateObjectFromOrigin:(id)originObject byKey:(NSString *const)associateKey
 {
-    if (GJCFCheckObjectNull(originObject) || GJCFStringIsNull(associateKey)) {
+    if (SWCheckObjectNull(originObject) || SWStringIsNull(associateKey)) {
         return nil;
     }
     id associateObj = objc_getAssociatedObject(originObject, &associateKey);
@@ -163,7 +163,7 @@
 
 + (void)associateRemoveFromOrigin:(id)originObject
 {
-    if (GJCFCheckObjectNull(originObject)) {
+    if (SWCheckObjectNull(originObject)) {
         return;
     }
     objc_removeAssociatedObjects(originObject);
@@ -198,7 +198,7 @@
 + (BOOL)isAppCameraAccessAuthorized
 {
     /* iOS7以上才有相机隐私控制 */
-    if (!GJCFSystemIsOver7) {
+    if (!SWSystemIsOver7) {
         return YES;
     }
     

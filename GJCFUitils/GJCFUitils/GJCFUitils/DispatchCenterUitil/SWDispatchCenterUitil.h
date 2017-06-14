@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GJCFDispatchCenterUitil : NSObject
+@interface SWDispatchCenterUitil : NSObject
 
 + (void)asyncMainQueue:(dispatch_block_t)block;
 

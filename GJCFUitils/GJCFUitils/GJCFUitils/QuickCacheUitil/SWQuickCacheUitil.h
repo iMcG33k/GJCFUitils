@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GJCFQuickCacheUitil : NSObject
+@interface SWQuickCacheUitil : NSObject
 
 + (BOOL)isNullObject:(id)anObject;
 
